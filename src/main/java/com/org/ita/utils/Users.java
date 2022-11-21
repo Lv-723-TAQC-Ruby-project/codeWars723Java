@@ -26,6 +26,11 @@ public enum Users {
             new main.java.com.org.ita.kata.implementation.KulykMariia.SevenImpl(),
             new main.java.com.org.ita.kata.implementation.KulykMariia.SixImpl(),
             new main.java.com.org.ita.kata.implementation.KulykMariia.FiveImpl()),
+    KHUDO_BOHDAN(5, "Khudo Bohdan", "bohdan-khudio",
+            new main.java.com.org.ita.kata.implementation.KhudoBohdan.EightImpl(),
+            new main.java.com.org.ita.kata.implementation.KhudoBohdan.SevenImpl(),
+            new main.java.com.org.ita.kata.implementation.KhudoBohdan.SixImpl(),
+            new main.java.com.org.ita.kata.implementation.KhudoBohdan.FiveImpl()),
     ;
 
     private final int id;
