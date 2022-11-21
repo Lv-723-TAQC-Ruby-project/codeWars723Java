@@ -4,11 +4,6 @@ import main.java.com.org.ita.kata.Eight;
 import main.java.com.org.ita.kata.Five;
 import main.java.com.org.ita.kata.Seven;
 import main.java.com.org.ita.kata.Six;
-import main.java.com.org.ita.kata.implementation.KulykMariia.EightImpl;
-
-
-import java.util.ArrayList;
-import java.util.List;
 
 public enum Users {
     BRYL_ANDRII(1, "Bryl Andrii", "AndrewEdgers",
