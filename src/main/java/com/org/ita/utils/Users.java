@@ -20,6 +20,11 @@ public enum Users {
             new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.SevenImpl(),
             new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.SixImpl(),
             new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.FiveImpl()),
+    KMYTIUK_NATALYIA(3, "Kmytiuk Natalyia", "natayarov",
+            new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.EightImpl(),
+            new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.SevenImpl(),
+            new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.SixImpl(),
+            new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.FiveImpl()),
     ;
 
     private final int id;
