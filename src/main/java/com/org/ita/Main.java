@@ -1,13 +1,14 @@
 package main.java.com.org.ita;
 
-/**
- * Hello world!
- *
- */
-public class Main
-{
-    public static void main( String[] args )
-    {
-        System.out.println( "Hello World!" );
+
+import main.java.com.org.ita.utils.Users;
+
+public class Main {
+    public static void main(String[] args) {
+        Users user = Users.OMETIUKH_SOFIIA;
+        user.getEight().amIWilson(10);
+        user = Users.getStudentById(1);
+        user.getEight().amIWilson(10);
+        System.out.println("Hello World!");
     }
 }

@@ -35,6 +35,7 @@ public class EightImpl implements Eight {
 
     @Override
     public boolean amIWilson(double n) {
+        System.out.println(n);
         return false;
     }
 
