@@ -5,10 +5,6 @@ import main.java.com.org.ita.kata.Five;
 import main.java.com.org.ita.kata.Seven;
 import main.java.com.org.ita.kata.Six;
 
-
-import java.util.ArrayList;
-import java.util.List;
-
 public enum Users {
     BRYL_ANDRII(1, "Bryl Andrii", "AndrewEdgers",
             new main.java.com.org.ita.kata.implementation.BrylAndrii.EightImpl(),
@@ -25,6 +21,11 @@ public enum Users {
             new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.SevenImpl(),
             new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.SixImpl(),
             new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.FiveImpl()),
+    KULYK_MARIIA(4,"Kulyk Mariia", "merykul",
+            new main.java.com.org.ita.kata.implementation.KulykMariia.EightImpl(),
+            new main.java.com.org.ita.kata.implementation.KulykMariia.SevenImpl(),
+            new main.java.com.org.ita.kata.implementation.KulykMariia.SixImpl(),
+            new main.java.com.org.ita.kata.implementation.KulykMariia.FiveImpl()),
     ;
 
     private final int id;
