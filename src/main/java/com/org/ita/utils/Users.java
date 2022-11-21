@@ -4,6 +4,7 @@ import main.java.com.org.ita.kata.Eight;
 import main.java.com.org.ita.kata.Five;
 import main.java.com.org.ita.kata.Seven;
 import main.java.com.org.ita.kata.Six;
+import main.java.com.org.ita.kata.implementation.KulykMariia.EightImpl;
 
 
 import java.util.ArrayList;
@@ -25,6 +26,11 @@ public enum Users {
             new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.SevenImpl(),
             new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.SixImpl(),
             new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.FiveImpl()),
+    KULYK_MARIIA(4,"Kulyk Mariia", "merykul",
+            new main.java.com.org.ita.kata.implementation.KulykMariia.EightImpl(),
+            new main.java.com.org.ita.kata.implementation.KulykMariia.SevenImpl(),
+            new main.java.com.org.ita.kata.implementation.KulykMariia.SixImpl(),
+            new main.java.com.org.ita.kata.implementation.KulykMariia.FiveImpl()),
     ;
 
     private final int id;
