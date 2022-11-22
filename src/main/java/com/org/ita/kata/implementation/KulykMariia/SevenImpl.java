@@ -1,7 +1,6 @@
 package main.java.com.org.ita.kata.implementation.KulykMariia;
 
 import main.java.com.org.ita.kata.Seven;
-
 import java.util.Arrays;
 
 public class SevenImpl implements Seven {
@@ -35,6 +34,6 @@ public class SevenImpl implements Seven {
 
     @Override
     public int whereIsHe(int p, int bef, int aft) {
-        return 0;
+        return Math.min(p - bef, aft + 1);
     }
 }
