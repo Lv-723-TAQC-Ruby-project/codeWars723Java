@@ -5,18 +5,20 @@ import main.java.com.org.ita.kata.Six;
 public class SixImpl implements Six {
     @Override
     public long findNb(long m) {
-        long n = 0;
-        long sum = 0;
-        while (sum <= m) {
-            n += 1;
-            sum += Math.pow(n, 3);
+        long rectanglesCounter = 0;
+        long totalVolume = 0;
+        while (totalVolume <= m) {
+            rectanglesCounter++;
+            totalVolume += Math.pow(rectanglesCounter, 3);
         }
-        return sum == m ? n : -1;
+        if (m == totalVolume) {
+            return rectanglesCounter;
+        } else return -1;
     }
 
     @Override
     public String balance(String book) {
-        return null;
+
     }
 
     @Override
