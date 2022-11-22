@@ -2,6 +2,9 @@ package main.java.com.org.ita.kata.implementation.KulykMariia;
 
 import main.java.com.org.ita.kata.Six;
 
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
+
 public class SixImpl implements Six {
     @Override
     public long findNb(long m) {
@@ -47,6 +50,20 @@ public class SixImpl implements Six {
 
     @Override
     public String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
-        return null;
+        if (lstOfArt.length == 0) {
+            return "";
+        }
+
+        final int space = lstOfArt[0].indexOf(" ");
+
+        return Stream.of(lstOf1stLetter)
+                .map(c -> c + " : " + Stream.of(lstOfArt)
+                        .filter(a -> c.contentEquals(a.subSequence(0, 1)))
+                        .map(a -> a.substring(space + 1))
+                        .mapToInt(Integer::parseInt)
+                        .sum())
+                .map(s -> "(" + s + ")")
+                .collect(Collectors.joining(" - "));
+
     }
 }
