@@ -18,12 +18,16 @@ public class SixImpl implements Six {
 
     @Override
     public String balance(String book) {
+        //book = book.replace("[^a-zA-Z ]", "");
+        //String[] lines = book.split("\n");
 
+
+        return book;
     }
 
     @Override
     public double f(double x) {
-        return 0;
+        return x / (1 + Math.sqrt(x + 1));
     }
 
     @Override
