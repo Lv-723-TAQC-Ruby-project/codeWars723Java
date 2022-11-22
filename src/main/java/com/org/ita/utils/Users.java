@@ -11,6 +11,11 @@ public enum Users {
             new main.java.com.org.ita.kata.implementation.BrylAndrii.SevenImpl(),
             new main.java.com.org.ita.kata.implementation.BrylAndrii.SixImpl(),
             new main.java.com.org.ita.kata.implementation.BrylAndrii.FiveImpl()),
+    FEDYK_SVYATOSLAV(1, "Fedyk Svyatoslav", "coffezka",
+            new main.java.com.org.ita.kata.implementation.FedykSvyatoslav.EightImpl(),
+            new main.java.com.org.ita.kata.implementation.FedykSvyatoslav.SevenImpl(),
+            new main.java.com.org.ita.kata.implementation.FedykSvyatoslav.SixImpl(),
+            new main.java.com.org.ita.kata.implementation.FedykSvyatoslav.FiveImpl()),
     OMETIUKH_SOFIIA(2, "Ometiukh Sofiia", "Sofiia44",
             new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.EightImpl(),
             new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.SevenImpl(),
@@ -26,6 +31,11 @@ public enum Users {
             new main.java.com.org.ita.kata.implementation.KulykMariia.SevenImpl(),
             new main.java.com.org.ita.kata.implementation.KulykMariia.SixImpl(),
             new main.java.com.org.ita.kata.implementation.KulykMariia.FiveImpl()),
+    KHUDO_BOHDAN(5, "Khudo Bohdan", "bohdan-khudio",
+            new main.java.com.org.ita.kata.implementation.KhudoBohdan.EightImpl(),
+            new main.java.com.org.ita.kata.implementation.KhudoBohdan.SevenImpl(),
+            new main.java.com.org.ita.kata.implementation.KhudoBohdan.SixImpl(),
+            new main.java.com.org.ita.kata.implementation.KhudoBohdan.FiveImpl()),
     ;
 
     private final int id;
