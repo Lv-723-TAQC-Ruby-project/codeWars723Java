@@ -12,7 +12,7 @@ public class SevenImpl implements Seven {
             result = (arr.length + 1) * navg - Arrays.stream(arr).sum();
             return (long) result;
         } catch (IllegalArgumentException e) {
-            System.out.println(Arrays.toString(e.getStackTrace()));
+            System.out.println(e.getMessage());
         }
         return (long) result;
     }
