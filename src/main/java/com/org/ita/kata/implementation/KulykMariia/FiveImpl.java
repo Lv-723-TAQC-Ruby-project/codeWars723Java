@@ -72,7 +72,23 @@ public class FiveImpl implements Five {
 
     @Override
     public long[] smallest(long n) {
-        return new long[0];
+        String numberString = String.valueOf(n);
+        char[] number = numberString.toCharArray();
+        long[] output = {};
+
+        for (int i1 = 0; i1 < number.length; i1++) {
+
+            for (int i2 = 0; i2 < number.length; i2++) {
+                StringBuilder digits = new StringBuilder();
+                String x = String.valueOf(number[i1]);
+                String result = String.valueOf(digits.insert(i2, x));
+
+                while (Integer.parseInt(result) < Integer.parseInt(numberString)) {
+                    output = new long[]{Integer.parseInt(String.valueOf(digits)), i1, i2};
+                }
+            }
+        }
+        return output;
     }
 }
 
