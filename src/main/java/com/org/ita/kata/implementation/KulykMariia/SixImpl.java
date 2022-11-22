@@ -5,7 +5,13 @@ import main.java.com.org.ita.kata.Six;
 public class SixImpl implements Six {
     @Override
     public long findNb(long m) {
-        return 0;
+        long n = 0;
+        long sum = 0;
+        while (sum <= m) {
+            n += 1;
+            sum += Math.pow(n, 3);
+        }
+        return sum == m ? n : -1;
     }
 
     @Override
