@@ -1,13 +1,37 @@
 package main.java.com.org.ita.kata.implementation.KulykMariia;
-
 import main.java.com.org.ita.kata.Five;
-
 import java.math.BigInteger;
 
 public class FiveImpl implements Five {
     @Override
-    public int artificialRain(int[] v) {
-        return 0;
+    public int artificialRain(int[] garden) {
+        int length = garden.length;
+        int[] left = new int[length];
+        int[] right = new int[length];
+        int result = 0;
+
+        if (length == 0) {
+            return 0;
+        } else if (length == 1) {
+            return 1;
+        }
+
+        for (int i = 1; i < length; i++)
+            if (garden[i - 1] <= garden[i]) {
+                left[i] = left[i - 1] + 1;
+            }
+
+        for (int i = length - 2; i >= 0; i--)
+            if (garden[i + 1] <= garden[i]) {
+                right[i] = right[i + 1] + 1;
+            }
+
+        for (int i = 0; i < length; i++) {
+            int currentSize = left[i] + right[i] + 1;
+            if (currentSize > result)
+                result = currentSize;
+        }
+        return result;
     }
 
     @Override
@@ -82,9 +106,10 @@ public class FiveImpl implements Five {
                 StringBuilder digits = new StringBuilder();
                 String x = String.valueOf(number[i1]);
                 String result = String.valueOf(digits.insert(i2, x));
+                String finalVal = String.valueOf(digits);
 
                 while (Integer.parseInt(result) < Integer.parseInt(numberString)) {
-                    output = new long[]{Integer.parseInt(String.valueOf(digits)), i1, i2};
+                    output = new long[]{Integer.parseInt(finalVal), i1, i2};
                 }
             }
         }
