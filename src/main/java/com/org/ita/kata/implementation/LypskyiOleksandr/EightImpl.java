@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.LypskyiOleksandr;
+package com.org.ita.kata.implementation.LypskyiOleksandr;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.Eight;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;
@@ -63,7 +63,9 @@ public class EightImpl implements Eight {
     }
 
     @Override
-    public boolean amIWilson(double n) { return n == 5 || n == 13 || n == 563; }
+    public boolean amIWilson(double n) {
+        return n == 5 || n == 13 || n == 563;
+    }
 
     @Override
     public double twoDecimalPlaces(double number) {

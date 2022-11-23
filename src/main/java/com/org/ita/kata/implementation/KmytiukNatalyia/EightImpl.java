@@ -1,16 +1,16 @@
-package main.java.com.org.ita.kata.implementation.KmytiukNatalyia;
+package com.org.ita.kata.implementation.KmytiukNatalyia;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.Eight;
 
 public class EightImpl implements Eight {
     @Override
     public int liters(double time) {
-        return (int)(time/2);
+        return (int) (time / 2);
     }
 
     @Override
     public double getVolumeOfCuboid(double length, double width, double height) {
-        return (int)(length*width*height);
+        return (int) (length * width * height);
     }
 
     @Override
@@ -20,12 +20,12 @@ public class EightImpl implements Eight {
 
     @Override
     public int[] squareOrSquareRoot(int[] array) {
-        for (int i=0;i < array.length; i++) {
+        for (int i = 0; i < array.length; i++) {
             double square = Math.sqrt(array[i]);
-            if (square==Math.round(square)) {
-                array[i] = (int)square;
+            if (square == Math.round(square)) {
+                array[i] = (int) square;
             } else {
-                array[i] = array[i]*array[i];
+                array[i] = array[i] * array[i];
             }
         }
         return array;
@@ -33,13 +33,13 @@ public class EightImpl implements Eight {
 
     @Override
     public int[] countPositivesSumNegatives(int[] input) {
-        if (input == null || input.length == 0) return new int[] {};
-        int count = 0,sum = 0;
+        if (input == null || input.length == 0) return new int[]{};
+        int count = 0, sum = 0;
         for (int i : input) {
-            if (i > 0) count ++;
+            if (i > 0) count++;
             if (i < 0) sum = sum + i;
         }
-        return new int[] {count,sum};
+        return new int[]{count, sum};
     }
 
     @Override
@@ -54,21 +54,21 @@ public class EightImpl implements Eight {
 
     @Override
     public double twoDecimalPlaces(double number) {
-        return Math.round(number*100.0)/100.0;
+        return Math.round(number * 100.0) / 100.0;
     }
 
     @Override
     public int[] divisibleBy(int[] numbers, int divider) {
         int count = 0;
-        for (int number : numbers){
-            if (number % divider == 0){
-                count ++;
+        for (int number : numbers) {
+            if (number % divider == 0) {
+                count++;
             }
         }
         int[] arr = new int[count];
         int i = 0;
-        for (int number : numbers){
-            if (number % divider == 0){
+        for (int number : numbers) {
+            if (number % divider == 0) {
                 arr[i] = number;
                 i++;
             }

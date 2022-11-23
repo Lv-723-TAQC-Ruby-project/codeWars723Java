@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.KulykMariia;
+package com.org.ita.kata.implementation.KulykMariia;
 
-import main.java.com.org.ita.kata.Six;
+import com.org.ita.kata.Six;
 
 import java.util.ArrayList;
 import java.util.Arrays;

@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.KovalyovVladyslav;
+package com.org.ita.kata.implementation.KovalyovVladyslav;
 
-import main.java.com.org.ita.kata.Five;
+import com.org.ita.kata.Five;
 
 import java.math.BigInteger;
 

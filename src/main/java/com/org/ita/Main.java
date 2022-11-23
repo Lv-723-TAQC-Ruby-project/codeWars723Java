@@ -1,7 +1,7 @@
-package main.java.com.org.ita;
+package com.org.ita;
 
 
-import main.java.com.org.ita.utils.Users;
+import com.org.ita.utils.Users;
 
 public class Main {
     public static void main(String[] args) {
