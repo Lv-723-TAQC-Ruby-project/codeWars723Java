@@ -2,6 +2,12 @@ package com.org.ita.kata.implementation.KulykMariia;
 
 import com.org.ita.kata.Six;
 
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.DoubleSummaryStatistics;
+import java.util.List;
+import java.util.regex.MatchResult;
+import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
@@ -21,11 +27,28 @@ public class SixImpl implements Six {
 
     @Override
     public String balance(String book) {
-        //book = book.replace("[^a-zA-Z ]", "");
-        //String[] lines = book.split("\n");
+        String bookSorted = book.replaceAll("[^a-zA-Z ]", "");
 
+        double[] values = Pattern.compile("\\d+\\.\\d+").matcher(bookSorted).results()
+                .map(MatchResult::group)
+                .mapToDouble(Double::parseDouble)
+                .toArray();
 
-        return book;
+        String[] notes = bookSorted.split("\n");
+        List<String> res = new ArrayList<>();
+        res.add(String.format("Original Balance: %.2f", values[0]));
+
+        for(int i = 1; i < notes.length; i++) {
+            values[0] -= values[i];
+            res.add(String.format("%s Balance %.2f", notes[i].trim(), values[0]));
+        }
+
+        DoubleSummaryStatistics dsm = Arrays.stream(values, 1, values.length)
+                .summaryStatistics();
+        res.add(String.format("Total expense  %.2f", dsm.getSum()));
+        res.add(String.format("Average expense  %.2f", dsm.getAverage()));
+
+        return String.join("\\r\\n", res);
     }
 
     @Override
