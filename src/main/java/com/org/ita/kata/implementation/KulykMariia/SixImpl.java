@@ -2,10 +2,7 @@ package com.org.ita.kata.implementation.KulykMariia;
 
 import com.org.ita.kata.Six;
 
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.DoubleSummaryStatistics;
-import java.util.List;
+import java.util.*;
 import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -77,7 +74,62 @@ public class SixImpl implements Six {
 
     @Override
     public String nbaCup(String resultSheet, String toFind) {
-        return null;
+        int wins = 0;
+        int draws = 0;
+        int lose = 0;
+        int scored = 0;
+        int conceded = 0;
+        int points = 0;
+
+        if (toFind.isEmpty()) {
+            return "";
+        }
+
+        List<String> games = List.of(resultSheet.split(","));
+        for (String game: games) {
+            if (game.equals(".")) {
+                System.out.println("Error(float number): " + game);
+            }
+        }
+
+        List<String[]> teams = games.stream().map(game -> game.split("\\s\\d+(\\W|$)")).collect(Collectors.toList());
+        List<Integer[]> scores = games.stream()
+                .map(game -> Arrays.stream(game.split(" "))
+                        .filter(x -> x.matches("\\d+"))
+                        .map(Integer::valueOf).toArray(Integer[]::new))
+                .collect(Collectors.toList());
+
+        for (int i = 0; i < teams.size(); i++) {
+            boolean draw = Objects.equals(scores.get(i)[0], scores.get(i)[1]);
+            boolean teamFirst = teams.get(i)[0].equals(toFind);
+            if (teamFirst) {
+                scored += scores.get(i)[0];
+                conceded += scores.get(i)[1];
+            } else {
+                scored += scores.get(i)[1];
+                conceded += scores.get(i)[0];
+            }
+            if (Objects.equals(scores.get(i)[0], scores.get(i)[1])) {
+                draws++;
+                points++;
+            } else if (scores.get(i)[0] < scores.get(i)[1]) {
+                if (teamFirst) {
+                    lose++;
+                } else {
+                    wins++;
+                    points += 3;
+                }
+            } else {
+                if (teamFirst) {
+                    wins++;
+                    points += 3;
+                } else {
+                    lose++;
+                }
+            }
+        }
+        return String.format(toFind + ":W=%s;D=%s;L=%s;Scored=%s;Conceded=%s;Points=%s",
+                wins, draws, lose, scored, conceded, points);
     }
 
     @Override
