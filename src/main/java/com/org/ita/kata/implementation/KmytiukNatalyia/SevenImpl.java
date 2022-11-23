@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.KmytiukNatalyia;
+package com.org.ita.kata.implementation.KmytiukNatalyia;
 
-import main.java.com.org.ita.kata.Seven;
+import com.org.ita.kata.Seven;
 
 public class SevenImpl implements Seven {
     @Override
@@ -9,8 +9,8 @@ public class SevenImpl implements Seven {
         for (double i : arr) {
             sum = sum + i;
         }
-        long res = (long) Math.ceil(navg *(arr.length + 1) - sum);
-        if (res<=0)
+        long res = (long) Math.ceil(navg * (arr.length + 1) - sum);
+        if (res <= 0)
             throw new IllegalArgumentException();
         else
             return res;
@@ -19,7 +19,7 @@ public class SevenImpl implements Seven {
     @Override
     public String seriesSum(int n) {
         double sum = 0.0;
-        for (int i =0; i < n; i++)
+        for (int i = 0; i < n; i++)
             sum += 1.0 / (1 + 3 * i);
         return String.format("%.2f", sum);
     }

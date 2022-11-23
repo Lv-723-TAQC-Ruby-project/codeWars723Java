@@ -1,15 +1,29 @@
-package main.java.com.org.ita.kata.implementation.OmetiukhSofiia;
+package com.org.ita.kata.implementation.OmetiukhSofiia;
 
-import main.java.com.org.ita.kata.Six;
+import com.org.ita.kata.Six;
 
 import java.util.ArrayList;
 import java.util.List;
-import java.util.Map;
-import java.util.stream.Collectors;
 
 import static java.util.stream.Collectors.averagingDouble;
 
 public class SixImpl implements Six {
+    public static List<Double> parseTemp(String town, String strng) {
+        List<Double> temps = new ArrayList<>();
+        for (String l : strng.split("\\n")) {
+            String[] data = l.split(":");
+            if (town.equals(data[0])) {
+                for (String weather : data[1].split(",")) {
+                    String[] temp = weather.split("\\s");
+                    temps.add(Double.parseDouble(temp[1]));
+                }
+                break;
+            }
+        }
+        if (temps.isEmpty()) temps.add(-1.0);
+        return temps;
+    }
+
     @Override
     public long findNb(long m) {
         long total = 1L;
@@ -46,22 +60,6 @@ public class SixImpl implements Six {
         return parseTemp(town, strng)
                 .stream()
                 .collect(averagingDouble(x -> (x - mean) * (x - mean)));
-    }
-
-    public static List<Double> parseTemp(String town, String strng) {
-        List<Double> temps = new ArrayList<>();
-        for (String l : strng.split("\\n")) {
-            String[] data = l.split(":");
-            if (town.equals(data[0])) {
-                for (String weather : data[1].split(",")) {
-                    String[] temp = weather.split("\\s");
-                    temps.add(Double.parseDouble(temp[1]));
-                }
-                break;
-            }
-        }
-        if (temps.isEmpty()) temps.add(-1.0);
-        return temps;
     }
 
     @Override

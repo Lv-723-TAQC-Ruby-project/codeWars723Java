@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.OmetiukhSofiia;
+package com.org.ita.kata.implementation.OmetiukhSofiia;
 
-import main.java.com.org.ita.kata.Five;
+import com.org.ita.kata.Five;
 
 import java.math.BigInteger;
 import java.util.stream.Stream;
@@ -32,11 +32,11 @@ public class FiveImpl implements Five {
 
     @Override
     public BigInteger perimeter(BigInteger n) {
-       return Stream.iterate(new BigInteger[]{ZERO, ONE}, s->new BigInteger[]{s[1], s[0].add(s[1])})
-               .limit(n.intValue()+1)
-               .map(s->s[1])
-               .reduce(ZERO, BigInteger::add)
-               .multiply(BigInteger.valueOf(4));
+        return Stream.iterate(new BigInteger[]{ZERO, ONE}, s -> new BigInteger[]{s[1], s[0].add(s[1])})
+                .limit(n.intValue() + 1)
+                .map(s -> s[1])
+                .reduce(ZERO, BigInteger::add)
+                .multiply(BigInteger.valueOf(4));
     }
 
     @Override
