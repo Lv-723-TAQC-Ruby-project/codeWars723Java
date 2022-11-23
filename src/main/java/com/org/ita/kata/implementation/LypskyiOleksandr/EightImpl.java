@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.LypskyiOleksandr;
+package com.org.ita.kata.implementation.LypskyiOleksandr;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.Eight;
 
 import java.math.BigDecimal;
 import java.math.RoundingMode;

@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.OmetiukhSofiia;
+package com.org.ita.kata.implementation.OmetiukhSofiia;
 
-import main.java.com.org.ita.kata.Six;
+import com.org.ita.kata.Six;
 
 import java.util.ArrayList;
 import java.util.List;

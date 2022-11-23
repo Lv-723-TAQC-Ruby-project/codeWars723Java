@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.KhudoBohdan;
+package com.org.ita.kata.implementation.KhudoBohdan;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.Eight;
 
 import java.lang.reflect.Array;
 import java.util.ArrayList;

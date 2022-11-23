@@ -1,5 +1,7 @@
-package main.java.com.org.ita.kata.implementation.KulykMariia;
-import main.java.com.org.ita.kata.Five;
+package com.org.ita.kata.implementation.KulykMariia;
+
+import com.org.ita.kata.Five;
+
 import java.math.BigInteger;
 
 public class FiveImpl implements Five {
@@ -79,7 +81,7 @@ public class FiveImpl implements Five {
         BigInteger count = BigInteger.ONE;
         BigInteger sum = BigInteger.ZERO;
 
-        for(int i = 0; i <= n.intValue(); i++) {
+        for (int i = 0; i <= n.intValue(); i++) {
             a = b;
             b = count;
             count = a.add(b);

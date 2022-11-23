@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.LypskyiOleksandr;
+package com.org.ita.kata.implementation.LypskyiOleksandr;
 
-import main.java.com.org.ita.kata.Seven;
+import com.org.ita.kata.Seven;
 
 public class SevenImpl implements Seven {
     @Override

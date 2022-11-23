@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.KhudoBohdan;
+package com.org.ita.kata.implementation.KhudoBohdan;
 
-import main.java.com.org.ita.kata.Six;
+import com.org.ita.kata.Six;
 
 public class SixImpl implements Six {
     @Override

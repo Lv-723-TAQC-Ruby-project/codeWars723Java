@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.OmetiukhSofiia;
+package com.org.ita.kata.implementation.OmetiukhSofiia;
 
-import main.java.com.org.ita.kata.Seven;
+import com.org.ita.kata.Seven;
 
 //import java.util.Arrays;
 import java.util.stream.DoubleStream;

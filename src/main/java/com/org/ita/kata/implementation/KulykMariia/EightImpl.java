@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.KulykMariia;
+package com.org.ita.kata.implementation.KulykMariia;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.Eight;
 import java.util.Arrays;
 
 public class EightImpl implements Eight {

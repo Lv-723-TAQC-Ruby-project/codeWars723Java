@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.OmetiukhSofiia;
+package com.org.ita.kata.implementation.OmetiukhSofiia;
 
-import main.java.com.org.ita.kata.Five;
+import com.org.ita.kata.Five;
 
 import java.math.BigInteger;
 import java.util.stream.Stream;

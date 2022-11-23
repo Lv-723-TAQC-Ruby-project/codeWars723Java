@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.BrylAndrii;
+package com.org.ita.kata.implementation.BrylAndrii;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.Eight;
 
 public class EightImpl implements Eight {
     @Override
