@@ -9,6 +9,7 @@ import java.util.List;
 import java.util.regex.MatchResult;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
+import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 
 public class SixImpl implements Six {
@@ -38,7 +39,7 @@ public class SixImpl implements Six {
         List<String> res = new ArrayList<>();
         res.add(String.format("Original Balance: %.2f", values[0]));
 
-        for(int i = 1; i < notes.length; i++) {
+        for (int i = 1; i < notes.length; i++) {
             values[0] -= values[i];
             res.add(String.format("%s Balance %.2f", notes[i].trim(), values[0]));
         }
@@ -56,14 +57,22 @@ public class SixImpl implements Six {
         return x / (1 + Math.sqrt(x + 1));
     }
 
+    public DoubleStream sortedData(String town, String strng) {
+        return Stream.of(strng.split("\n"))
+                .filter(s -> s.startsWith(town + ":"))
+                .flatMapToDouble(s -> Stream.of(s.replaceAll("[^\\d.]", " ").trim().split("\\s+"))
+                        .mapToDouble(Double::parseDouble));
+
+    }
+
     @Override
     public double mean(String town, String strng) {
-        return 0;
+        return sortedData(town, strng).average().orElse(-1);
     }
 
     @Override
     public double variance(String town, String strng) {
-        return 0;
+        return sortedData(town, strng).map(m -> Math.pow(m - mean(town, strng), 2)).average().orElse(-1);
     }
 
     @Override
