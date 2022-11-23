@@ -5,7 +5,13 @@ import com.org.ita.kata.Six;
 public class SixImpl implements Six {
     @Override
     public long findNb(long m) {
-        return 0;
+        long volume = 1L;
+        long number_of_rows = 1L;
+        while (volume < m) {
+            number_of_rows += 1;
+            volume += Math.pow(number_of_rows, 3);
+        }
+        return volume == m ? number_of_rows : -1;
     }
 
     @Override
