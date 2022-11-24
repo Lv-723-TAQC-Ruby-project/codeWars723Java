@@ -32,6 +32,22 @@ public class ConsoleReader {
 
     }
 
+    public int readIntegerMinMax(int min, int max) {
+        try {
+            int value = Integer.parseInt(reader.readLine());
+            if (min <= value && value <= max) {
+                return value;
+            }
+            System.out.println("Enter a value between " + min + " " + max);
+            return readIntegerMinMax(min, max);
+
+        } catch (IOException | NumberFormatException e) {
+            System.out.println("Input should be integer");
+            return readIntegerMinMax(min, max);
+        }
+
+    }
+
     public Long readLong() {
         try {
             return Long.parseLong(reader.readLine());
@@ -89,6 +105,21 @@ public class ConsoleReader {
         } catch (IOException e) {
             System.out.println("Input should be long");
             return readIntArr();
+        }
+    }
+
+    public double[] readDoubleArr() {
+        try {
+
+            String[] in = reader.readLine().trim().split("\\s+");
+            double[] arr = new double[in.length];
+            for (int i = 0; i < in.length; i++) {
+                arr[i] = Double.parseDouble(in[i]);
+            }
+            return arr;
+        } catch (IOException e) {
+            System.out.println("Input should be long");
+            return readDoubleArr();
         }
     }
 

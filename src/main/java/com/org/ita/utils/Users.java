@@ -6,7 +6,7 @@ import com.org.ita.kata.Seven;
 import com.org.ita.kata.Six;
 
 public enum Users {
-    BRYL_ANDRII(1, "Bryl Andrii", "AndrewEdgers",
+    BRYL_ANDRII(0, "Bryl Andrii", "AndrewEdgers",
             new com.org.ita.kata.implementation.BrylAndrii.EightImpl(),
             new com.org.ita.kata.implementation.BrylAndrii.SevenImpl(),
             new com.org.ita.kata.implementation.BrylAndrii.SixImpl(),
@@ -96,5 +96,16 @@ public enum Users {
 
     public Eight getEight() {
         return eight;
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + name;
+    }
+
+    public static void printALL() {
+        for (Users student : values()) {
+            System.out.println(student.toString());
+        }
     }
 }
