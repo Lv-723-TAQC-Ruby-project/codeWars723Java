@@ -1,7 +1,6 @@
-//package com.org.ita.kata.implementation.OmetiukhSofiia;
-package main.java.com.org.ita.kata.implementation.OmetiukhSofiia;
+package com.org.ita.kata.implementation.OmetiukhSofiia;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.Eight;
 
 import java.util.Arrays;
 //import java.util.stream.*;

@@ -1,6 +1,6 @@
-package main.java.com.org.ita.kata.implementation.KulykMariia;
+package com.org.ita.kata.implementation.KulykMariia;
 
-import main.java.com.org.ita.kata.Seven;
+import com.org.ita.kata.Seven;
 import java.util.Arrays;
 
 public class SevenImpl implements Seven {
