@@ -1,3 +1,6 @@
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+
 package com.org.ita.kata.implementation.LypskyiOleksandr;
 
 import com.org.ita.kata.Six;
