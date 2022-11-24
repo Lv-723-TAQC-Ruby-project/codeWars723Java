@@ -1,3 +1,5 @@
+import java.math.BigDecimal;
+import java.math.MathContext;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -50,7 +52,10 @@ public class SixImpl implements Six {
 
     @Override
     public double f(double x) {
-        return 0;
+        MathContext mc = new MathContext(30);
+        BigDecimal one = new BigDecimal(1);
+        BigDecimal result = (one.add(BigDecimal.valueOf(x))).sqrt(mc).subtract(one);
+        return result.doubleValue();
     }
 
     @Override
