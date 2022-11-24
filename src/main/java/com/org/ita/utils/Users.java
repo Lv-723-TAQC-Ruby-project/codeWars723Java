@@ -1,32 +1,46 @@
-package main.java.com.org.ita.utils;
+package com.org.ita.utils;
 
-import main.java.com.org.ita.kata.Eight;
-import main.java.com.org.ita.kata.Five;
-import main.java.com.org.ita.kata.Seven;
-import main.java.com.org.ita.kata.Six;
+import com.org.ita.kata.Eight;
+import com.org.ita.kata.Five;
+import com.org.ita.kata.Seven;
+import com.org.ita.kata.Six;
 
 public enum Users {
-    BRYL_ANDRII(1, "Bryl Andrii", "AndrewEdgers",
-            new main.java.com.org.ita.kata.implementation.BrylAndrii.EightImpl(),
-            new main.java.com.org.ita.kata.implementation.BrylAndrii.SevenImpl(),
-            new main.java.com.org.ita.kata.implementation.BrylAndrii.SixImpl(),
-            new main.java.com.org.ita.kata.implementation.BrylAndrii.FiveImpl()),
+    BRYL_ANDRII(0, "Bryl Andrii", "AndrewEdgers",
+            new com.org.ita.kata.implementation.BrylAndrii.EightImpl(),
+            new com.org.ita.kata.implementation.BrylAndrii.SevenImpl(),
+            new com.org.ita.kata.implementation.BrylAndrii.SixImpl(),
+            new com.org.ita.kata.implementation.BrylAndrii.FiveImpl()),
     OMETIUKH_SOFIIA(2, "Ometiukh Sofiia", "Sofiia44",
-            new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.EightImpl(),
-            new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.SevenImpl(),
-            new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.SixImpl(),
-            new main.java.com.org.ita.kata.implementation.OmetiukhSofiia.FiveImpl()),
+            new com.org.ita.kata.implementation.OmetiukhSofiia.EightImpl(),
+            new com.org.ita.kata.implementation.OmetiukhSofiia.SevenImpl(),
+            new com.org.ita.kata.implementation.OmetiukhSofiia.SixImpl(),
+            new com.org.ita.kata.implementation.OmetiukhSofiia.FiveImpl()),
     KMYTIUK_NATALYIA(3, "Kmytiuk Natalyia", "natayarov",
-            new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.EightImpl(),
-            new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.SevenImpl(),
-            new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.SixImpl(),
-            new main.java.com.org.ita.kata.implementation.KmytiukNatalyia.FiveImpl()),
-    KULYK_MARIIA(4,"Kulyk Mariia", "merykul",
-            new main.java.com.org.ita.kata.implementation.KulykMariia.EightImpl(),
-            new main.java.com.org.ita.kata.implementation.KulykMariia.SevenImpl(),
-            new main.java.com.org.ita.kata.implementation.KulykMariia.SixImpl(),
-            new main.java.com.org.ita.kata.implementation.KulykMariia.FiveImpl()),
-    ;
+            new com.org.ita.kata.implementation.KmytiukNatalyia.EightImpl(),
+            new com.org.ita.kata.implementation.KmytiukNatalyia.SevenImpl(),
+            new com.org.ita.kata.implementation.KmytiukNatalyia.SixImpl(),
+            new com.org.ita.kata.implementation.KmytiukNatalyia.FiveImpl()),
+    KULYK_MARIIA(4, "Kulyk Mariia", "merykul",
+            new com.org.ita.kata.implementation.KulykMariia.EightImpl(),
+            new com.org.ita.kata.implementation.KulykMariia.SevenImpl(),
+            new com.org.ita.kata.implementation.KulykMariia.SixImpl(),
+            new com.org.ita.kata.implementation.KulykMariia.FiveImpl()),
+    KHUDO_BOHDAN(5, "Khudo Bohdan", "bohdan-khudio",
+            new com.org.ita.kata.implementation.KhudoBohdan.EightImpl(),
+            new com.org.ita.kata.implementation.KhudoBohdan.SevenImpl(),
+            new com.org.ita.kata.implementation.KhudoBohdan.SixImpl(),
+            new com.org.ita.kata.implementation.KhudoBohdan.FiveImpl()),
+    FEDYK_SVYATOSLAV(6, "Fedyk Svyatoslav", "coffezka",
+            new com.org.ita.kata.implementation.FedykSvyatoslav.EightImpl(),
+            new com.org.ita.kata.implementation.FedykSvyatoslav.SevenImpl(),
+            new com.org.ita.kata.implementation.FedykSvyatoslav.SixImpl(),
+            new com.org.ita.kata.implementation.FedykSvyatoslav.FiveImpl()),
+    STANISLAV_KOVALOV(9, "Kovalov Stanislav", "stas-kov7",
+            new com.org.ita.kata.implementation.StanislavKovalov.EightImpl(),
+            new com.org.ita.kata.implementation.StanislavKovalov.SevenImpl(),
+            new com.org.ita.kata.implementation.StanislavKovalov.SixImpl(),
+            new com.org.ita.kata.implementation.StanislavKovalov.FiveImpl());
 
     private final int id;
     private final String name;
@@ -82,5 +96,16 @@ public enum Users {
 
     public Eight getEight() {
         return eight;
+    }
+
+    @Override
+    public String toString() {
+        return id + " " + name;
+    }
+
+    public static void printALL() {
+        for (Users student : values()) {
+            System.out.println(student.toString());
+        }
     }
 }
