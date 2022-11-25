@@ -1,9 +1,10 @@
 package com.org.ita.kata.implementation.KulykMariia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Eight;
 import java.util.Arrays;
 
-public class EightImpl implements Eight {
+public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
         double result = time * 0.5;

@@ -1,10 +1,11 @@
 package com.org.ita.kata.implementation.KhudoBohdan;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Seven;
 
 import java.util.Arrays;
 
-public class SevenImpl implements Seven {
+public class SevenImpl extends BaseKata implements Seven {
     @Override
     public long newAvg(double[] arr, double navg) {
         double result = navg * (arr.length + 1) - Arrays.stream(arr).sum();

@@ -1,5 +1,6 @@
 package com.org.ita.kata.implementation.KulykMariia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
 
 import java.util.*;
@@ -9,7 +10,7 @@ import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
 
-public class SixImpl implements Six {
+public class SixImpl extends BaseKata implements Six {
     @Override
     public long findNb(long m) {
         long rectanglesCounter = 0;

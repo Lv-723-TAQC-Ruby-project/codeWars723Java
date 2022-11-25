@@ -1,8 +1,9 @@
 package com.org.ita.kata.implementation.KmytiukNatalyia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
 
-public class SixImpl implements Six {
+public class SixImpl extends BaseKata implements Six {
     @Override
     public long findNb(long m) {
         long num = 0;

@@ -1,5 +1,6 @@
 package com.org.ita.kata.implementation.LypskyiOleksandr;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Eight;
 
 import java.math.BigDecimal;
@@ -7,7 +8,7 @@ import java.math.RoundingMode;
 import java.util.ArrayList;
 import java.util.List;
 
-public class EightImpl implements Eight {
+public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
         return (int) (time * 0.5);

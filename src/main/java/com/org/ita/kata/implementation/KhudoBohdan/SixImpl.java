@@ -1,11 +1,12 @@
 package com.org.ita.kata.implementation.KhudoBohdan;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 
-public class SixImpl implements Six {
+public class SixImpl extends BaseKata implements Six {
     @Override
     public long findNb(long m) {
         long n = 0;

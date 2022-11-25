@@ -1,10 +1,11 @@
 package com.org.ita.kata.implementation.OmetiukhSofiia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Seven;
 
 import java.util.stream.DoubleStream;
 
-public class SevenImpl implements Seven {
+public class SevenImpl extends BaseKata implements Seven {
     @Override
     public long newAvg(double[] arr, double navg) {
         double don = navg * (arr.length + 1) - DoubleStream.of(arr).sum();

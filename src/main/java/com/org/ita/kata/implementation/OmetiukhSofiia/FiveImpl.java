@@ -1,5 +1,6 @@
 package com.org.ita.kata.implementation.OmetiukhSofiia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Five;
 
 import java.math.BigInteger;
@@ -8,7 +9,7 @@ import java.util.stream.Stream;
 import static java.math.BigInteger.ONE;
 import static java.math.BigInteger.ZERO;
 
-public class FiveImpl implements Five {
+public class FiveImpl extends BaseKata implements Five {
     @Override
     public int artificialRain(int[] v) {
         return 0;

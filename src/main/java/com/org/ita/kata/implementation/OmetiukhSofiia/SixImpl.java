@@ -1,5 +1,6 @@
 package com.org.ita.kata.implementation.OmetiukhSofiia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
 
 import java.util.ArrayList;
@@ -7,7 +8,7 @@ import java.util.List;
 
 import static java.util.stream.Collectors.averagingDouble;
 
-public class SixImpl implements Six {
+public class SixImpl extends BaseKata implements Six {
     public static List<Double> parseTemp(String town, String strng) {
         List<Double> temps = new ArrayList<>();
         for (String l : strng.split("\\n")) {
