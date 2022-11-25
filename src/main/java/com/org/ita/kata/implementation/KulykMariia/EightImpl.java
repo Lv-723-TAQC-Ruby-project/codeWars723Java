@@ -1,9 +1,10 @@
-package main.java.com.org.ita.kata.implementation.KulykMariia;
+package com.org.ita.kata.implementation.KulykMariia;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.BaseKata;
+import com.org.ita.kata.Eight;
 import java.util.Arrays;
 
-public class EightImpl implements Eight {
+public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
         double result = time * 0.5;
@@ -18,7 +19,7 @@ public class EightImpl implements Eight {
 
     @Override
     public float mpgToKPM(float mpg) {
-        double formula = mpg * (1.609344/4.54609188);
+        double formula = mpg * (1.609344 / 4.54609188);
         return (float) formula;
     }
 
@@ -38,7 +39,7 @@ public class EightImpl implements Eight {
         if (input == null) {
             System.out.println("It is empty array!");
         } else {
-            for (int i: input) {
+            for (int i : input) {
                 if (i > 0) {
                     positive += 1;
                 } else negative += i;
@@ -55,14 +56,12 @@ public class EightImpl implements Eight {
 
     @Override
     public boolean amIWilson(double n) {
-        if (n == 13 || n == 5 || n == 563) {
-            return true;
-        } else return false;
+        return n == 13 || n == 5 || n == 563;
     }
 
     @Override
     public double twoDecimalPlaces(double number) {
-        return (Math.round(number*100))/100.0;
+        return (Math.round(number * 100)) / 100.0;
     }
 
     @Override

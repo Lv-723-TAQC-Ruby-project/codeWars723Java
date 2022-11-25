@@ -1,15 +1,14 @@
-package main.java.com.org.ita.kata.implementation.KhudoBohdan;
+package com.org.ita.kata.implementation.KhudoBohdan;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.BaseKata;
+import com.org.ita.kata.Eight;
 
-import java.lang.reflect.Array;
 import java.util.ArrayList;
-import java.util.List;
 
-public class EightImpl implements Eight {
+public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
-        return (int)(time * 0.5);
+        return (int) (time * 0.5);
     }
 
     @Override
@@ -19,8 +18,8 @@ public class EightImpl implements Eight {
 
     @Override
     public float mpgToKPM(float mpg) {
-       double kpl = (mpg * 1.609344) / 4.54609188;
-       return  Float.parseFloat(String.format("%.2f", kpl));
+        double kpl = (mpg * 1.609344) / 4.54609188;
+        return Float.parseFloat(String.format("%.2f", kpl));
     }
 
     @Override
@@ -28,11 +27,10 @@ public class EightImpl implements Eight {
         int[] result = new int[array.length];
 
         for (int i = 0; i < array.length; i++) {
-            int sqrt = (int)Math.sqrt(array[i]);
+            int sqrt = (int) Math.sqrt(array[i]);
             if (sqrt * sqrt == array[i]) {
-                result[i]  = sqrt;
-            }
-            else {
+                result[i] = sqrt;
+            } else {
                 result[i] = array[i] * array[i];
             }
         }
@@ -42,16 +40,15 @@ public class EightImpl implements Eight {
 
     @Override
     public int[] countPositivesSumNegatives(int[] input) {
-        if(input == null || input.length == 0) {
-            return new int[] {};
+        if (input == null || input.length == 0) {
+            return new int[]{};
         }
-        int[] result = new int[] {0, 0};
+        int[] result = new int[]{0, 0};
 
         for (int i = 0; i < input.length; i++) {
             if (input[i] > 0) {
                 result[0]++;
-            }
-            else if (input[i] < 0) {
+            } else if (input[i] < 0) {
                 result[1] += input[i];
             }
 
