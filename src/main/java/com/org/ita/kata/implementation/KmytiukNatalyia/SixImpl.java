@@ -40,6 +40,35 @@ public class SixImpl implements Six {
 
     @Override
     public String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
-        return null;
+        String res ="";
+        if(lstOfArt.length != 0 && lstOf1stLetter.length != 0)
+        {
+            for(int i = 0; i < lstOf1stLetter.length; i++)
+            {
+                String L = lstOf1stLetter[i];
+                int count =0;
+
+                for(int j = 0; j < lstOfArt.length; j++)
+                {
+                    String cur = lstOfArt[j];
+                    if( cur.substring(0,1).equals(L) )
+                    {
+                        String[] val = cur.split(" ");
+                        count += Integer.parseInt(val[1]);
+                    }
+                }
+
+                String stock = "(" + L + " : " + count + ")";
+                if(i != lstOf1stLetter.length - 1)
+                {
+                    res += stock + " - ";
+                }
+                else
+                {
+                    res += stock;
+                }
+            }
+        }
+        return res;
     }
 }

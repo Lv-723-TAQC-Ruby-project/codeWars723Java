@@ -55,7 +55,6 @@ public class FiveImpl implements Five {
         return res;
     }
 
-    @Override
     private static boolean isPrime( int num){
         if(num == 2) return true;
         if(num % 2 == 1) {
