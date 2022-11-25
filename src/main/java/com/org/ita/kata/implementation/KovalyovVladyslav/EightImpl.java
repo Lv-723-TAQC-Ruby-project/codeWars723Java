@@ -33,26 +33,51 @@ public class EightImpl implements Eight {
 
     @Override
     public int[] countPositivesSumNegatives(int[] input) {
-        return new int[0];
+        int[] sum = new int[2];
+        if(input==null||input.length==0){
+            return new int[0];
+        }
+        for(int i=0; i<input.length; i++){
+            if(i>0){
+                sum[0]+=1;
+            }else{
+                sum[1]+=i;
+            }
+        }
+        return sum;
     }
 
     @Override
     public int stringToNumber(String str) {
-        return 0;
+        return Integer.parseInt(str);
     }
 
     @Override
     public boolean amIWilson(double n) {
-        return false;
+        return n == 5 || n == 13 || n == 563;
     }
 
     @Override
     public double twoDecimalPlaces(double number) {
-        return 0;
+        return Double.parseDouble(String.format("%.2f", number));
     }
 
     @Override
     public int[] divisibleBy(int[] numbers, int divider) {
-        return new int[0];
+        int count = 0;
+        for(int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % divider == 0) {
+                count++;
+            }
+        }
+        int[] arr = new int [count];
+        int a = 0;
+        for (int i = 0; i < numbers.length; i++) {
+            if (numbers[i] % divider == 0) {
+                arr[a] = numbers[i];
+                a++;
+            }
+        }
+        return arr;
     }
 }
