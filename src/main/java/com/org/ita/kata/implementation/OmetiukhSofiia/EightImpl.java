@@ -1,5 +1,6 @@
 package com.org.ita.kata.implementation.OmetiukhSofiia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Eight;
 
 import java.util.Arrays;
@@ -7,7 +8,7 @@ import java.util.Arrays;
 //import java.util.List;
 
 
-public class EightImpl implements Eight {
+public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
         double litres = Math.floor(time * 0.5);

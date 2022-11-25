@@ -1,10 +1,11 @@
 package com.org.ita.kata.implementation.KhudoBohdan;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Five;
 
 import java.math.BigInteger;
 
-public class FiveImpl implements Five {
+public class FiveImpl extends BaseKata implements Five {
     @Override
     public int artificialRain(int[] v) {
         return 0;

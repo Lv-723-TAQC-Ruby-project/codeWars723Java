@@ -1,10 +1,11 @@
 package com.org.ita.kata.implementation.KulykMariia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Five;
 
 import java.math.BigInteger;
 
-public class FiveImpl implements Five {
+public class FiveImpl extends BaseKata implements Five {
     public static boolean isPrime(long n) {
         for (int i = 2; i <= Math.sqrt(n); i++)
             if (n % i == 0) return false;

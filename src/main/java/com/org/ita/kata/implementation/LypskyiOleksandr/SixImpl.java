@@ -1,11 +1,48 @@
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
 package com.org.ita.kata.implementation.LypskyiOleksandr;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
 
-public class SixImpl implements Six {
+import java.math.BigDecimal;
+import java.math.MathContext;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.List;
+import java.util.regex.Matcher;
+import java.util.regex.Pattern;
+import java.util.stream.Collectors;
+
+public class SixImpl extends BaseKata implements Six {
+    public static List<Double> data_to_list(String town, String strng) {
+        String[] all_towns = strng.split("\n");
+
+
+        List<Double> town_data = new ArrayList<>();
+        for (String town_string : all_towns) {
+            String[] town_split = town_string.split(":");
+            String town_name = town_split[0];
+            if (town_name.equals(town)) {
+                String[] town_values = town_split[1].split(",");
+                List<Double> list_of_values = new ArrayList<>();
+                for (String town_value : town_values) {
+                    list_of_values.add(Double.parseDouble(town_value.split(" ")[1]));
+                }
+                double mean = list_of_values.stream().collect(Collectors.summingDouble(Double::doubleValue)) / town_values.length;
+                List<Double> list_of_variance = new ArrayList<>();
+                for (Object value : list_of_values) {
+                    list_of_variance.add((mean - (double) value) * (mean - (double) value));
+                }
+                double variance = list_of_variance.stream().collect(Collectors.summingDouble(Double::doubleValue)) / list_of_variance.size();
+                town_data.addAll(Arrays.asList(mean, variance));
+            }
+
+        }
+        if (town_data.size() == 0) {
+            town_data.addAll(Arrays.asList(-1.0, -1.0));
+        }
+        return town_data;
+    }
+
     @Override
     public long findNb(long m) {
         long volume = 1L;
@@ -50,17 +87,23 @@ public class SixImpl implements Six {
 
     @Override
     public double f(double x) {
-        return 0;
+        MathContext mc = new MathContext(30);
+        BigDecimal one = new BigDecimal(1);
+        BigDecimal result = (one.add(BigDecimal.valueOf(x))).sqrt(mc).subtract(one);
+        return result.doubleValue();
     }
 
     @Override
     public double mean(String town, String strng) {
-        return 0;
+        List<Double> data = data_to_list(town, strng);
+        return data.get(0);
+
     }
 
     @Override
     public double variance(String town, String strng) {
-        return 0;
+        List<Double> data = data_to_list(town, strng);
+        return data.get(1);
     }
 
     @Override

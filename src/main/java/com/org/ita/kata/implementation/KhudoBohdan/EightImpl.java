@@ -1,10 +1,11 @@
 package com.org.ita.kata.implementation.KhudoBohdan;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Eight;
 
 import java.util.ArrayList;
 
-public class EightImpl implements Eight {
+public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
         return (int) (time * 0.5);

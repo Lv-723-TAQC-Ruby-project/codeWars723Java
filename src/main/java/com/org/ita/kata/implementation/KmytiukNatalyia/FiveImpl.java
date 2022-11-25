@@ -1,21 +1,22 @@
 package com.org.ita.kata.implementation.KmytiukNatalyia;
 
+import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Five;
 
 import java.math.BigInteger;
 
-public class FiveImpl implements Five {
+public class FiveImpl extends BaseKata implements Five {
     @Override
     public int artificialRain(int[] v) {
-        int res =0;
+        int res = 0;
         int numbers = v.length;
-        int [] left = new int[numbers];
-        int [] leftR = new int[numbers];
-        int [] right = new int[numbers];
-        int [] rightL = new int[numbers];
+        int[] left = new int[numbers];
+        int[] leftR = new int[numbers];
+        int[] right = new int[numbers];
+        int[] rightL = new int[numbers];
 
         left[0] = 1;
-        for (int i = 1;i < numbers;i++) {
+        for (int i = 1; i < numbers; i++) {
             if (v[i] <= v[i - 1]) {
                 left[i] = left[i - 1] + 1;
             } else {
@@ -23,37 +24,38 @@ public class FiveImpl implements Five {
             }
         }
         right[numbers - 1] = 1;
-        for (int i = numbers - 2;i >= 0;i--) {
-            if  (v[i] <= v[i + 1]) {
+        for (int i = numbers - 2; i >= 0; i--) {
+            if (v[i] <= v[i + 1]) {
                 right[i] = right[i + 1] + 1;
-            } else{
+            } else {
                 right[i] = 1;
             }
         }
 
         leftR[numbers - 1] = 1;
-        for (int i =numbers-2;i >=0;i--){
-            if (left[i]<left[i+1]) {
-                leftR[i]=leftR[i+1] + 1;
+        for (int i = numbers - 2; i >= 0; i--) {
+            if (left[i] < left[i + 1]) {
+                leftR[i] = leftR[i + 1] + 1;
             } else {
                 leftR[i] = 1;
             }
         }
 
         rightL[0] = 1;
-        for ( int i = 1;i < numbers;i++){
-            if (right[i]<right[i-1]) {
-                rightL[i]=rightL[i-1] + 1;
+        for (int i = 1; i < numbers; i++) {
+            if (right[i] < right[i - 1]) {
+                rightL[i] = rightL[i - 1] + 1;
             } else {
                 rightL[i] = 1;
             }
         }
 
-        for (int i = 0; i<numbers; i++) {
-            res = Math.max(res,leftR[i] + rightL[i]-1);
+        for (int i = 0; i < numbers; i++) {
+            res = Math.max(res, leftR[i] + rightL[i] - 1);
         }
         return res;
     }
+
 
     private static boolean isPrime( int num){
         if(num == 2) return true;
@@ -66,30 +68,31 @@ public class FiveImpl implements Five {
         }
         return false;
     }
+
     public long[] gap(int g, long m, long n) {
         long prime = 0;
-        long [] res =new long[2];
+        long[] res = new long[2];
 
-        for (int i = (int) m; i <n ; i++){
-            if(isPrime(i)) {
-                if(prime == 0){
-                    prime =i;
-                }else if (i -prime == g){
-                    res[0]=prime;
-                    res[1]=i;
+        for (int i = (int) m; i < n; i++) {
+            if (isPrime(i)) {
+                if (prime == 0) {
+                    prime = i;
+                } else if (i - prime == g) {
+                    res[0] = prime;
+                    res[1] = i;
                     return res;
-                }else {
-                    prime =i;
+                } else {
+                    prime = i;
                 }
             }
-        }return null;
+        }
+        return null;
     }
-    
+
     @Override
     public int zeros(int n) {
         int num = 0;
-        if (n==0)
-            return 0;
+        if (n == 0) return 0;
         while (n > 5) {
             n /= 5;
             num += n;
@@ -103,7 +106,7 @@ public class FiveImpl implements Five {
         BigInteger b = BigInteger.valueOf(1);
         BigInteger c = BigInteger.valueOf(1);
         BigInteger sum = BigInteger.valueOf(0);
-        for(int i =0; i <= n.intValue(); i++) {
+        for (int i = 0; i <= n.intValue(); i++) {
             a = b;
             b = c;
             c = a.add(b);
@@ -123,10 +126,10 @@ public class FiveImpl implements Five {
         int n2 = 0;
         long res = n;
         String temp = String.valueOf(n);
-        for(int i =0; i<temp.length(); i++ ){
-            for(int j =0; j<temp.length(); j++){
-                if (i!=j && making(temp, i, j) < res) {
-                    res = making(temp,i,j);
+        for (int i = 0; i < temp.length(); i++) {
+            for (int j = 0; j < temp.length(); j++) {
+                if (i != j && making(temp, i, j) < res) {
+                    res = making(temp, i, j);
                     n1 = i;
                     n2 = j;
                 }
