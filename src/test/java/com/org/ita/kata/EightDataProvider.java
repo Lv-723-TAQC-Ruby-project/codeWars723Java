@@ -22,4 +22,17 @@ public class EightDataProvider extends BaseDataProvider {
         return combineImplWithTests(EIGHTS_IMPL, testData);
 
     }
+    @DataProvider(name = "dataAmIWilson")
+    public Object[][] amIWilsonData() {
+        Object[][] testData = new Object[][] {
+                {5, true},
+                {13, true},
+                {563, true},
+                {45, false},
+                {-89, false},
+                {568, false},
+                {0, false}
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
 }

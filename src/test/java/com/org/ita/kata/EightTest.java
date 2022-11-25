@@ -11,4 +11,10 @@ public class EightTest extends EightDataProvider{
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(dataProvider = "dataAmIWilson")
+    public void amIWilsonTest(Eight impl, double data, boolean expected) {
+        boolean actual = impl.amIWilson(data);
+        Assert.assertEquals(actual, expected);
+    }
+
 }
