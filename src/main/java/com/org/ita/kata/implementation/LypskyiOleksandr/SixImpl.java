@@ -1,7 +1,9 @@
 import java.math.BigDecimal;
 import java.math.MathContext;
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
+import java.util.stream.Collectors;
 
 package com.org.ita.kata.implementation.LypskyiOleksandr;
 
@@ -58,14 +60,49 @@ public class SixImpl implements Six {
         return result.doubleValue();
     }
 
+    
+    public static List<Double> data_to_list(String town, String strng) {
+        String[] all_towns = strng.split("\n");
+
+
+        List<Double> town_data = new ArrayList<>();
+        for (String town_string : all_towns) {
+            String[] town_split = town_string.split(":");
+            String town_name = town_split[0];
+            if (town_name.equals(town)) {
+                String[] town_values = town_split[1].split(",");
+                List<Double> list_of_values = new ArrayList<>();
+                for (String town_value : town_values) {
+                    list_of_values.add(Double.parseDouble(town_value.split(" ")[1]));
+                }
+                double mean = (double) list_of_values.stream().collect(Collectors.summingDouble(Double::doubleValue)) / town_values.length;
+                List<Double> list_of_variance = new ArrayList<>();
+                for (Object value : list_of_values) {
+                    list_of_variance.add((mean - (double) value) * (mean - (double) value));
+                }
+                double variance = (double) list_of_variance.stream().collect(Collectors.summingDouble(Double::doubleValue)) / list_of_variance.size();
+                town_data.addAll(Arrays.asList(mean, variance));
+            }
+
+        }
+        if (town_data.size() == 0) {
+            town_data.addAll(Arrays.asList(-1.0, -1.0));
+        }
+        return town_data;
+    }
+    
+    
     @Override
     public double mean(String town, String strng) {
-        return 0;
+        List<Double> data = data_to_list(town, strng);
+        return data.get(0);
+
     }
 
     @Override
     public double variance(String town, String strng) {
-        return 0;
+         List<Double> data = data_to_list(town, strng);
+        return data.get(1);
     }
 
     @Override
