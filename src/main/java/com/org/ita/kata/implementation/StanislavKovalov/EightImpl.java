@@ -1,8 +1,9 @@
-package main.java.com.org.ita.kata.implementation.StanislavKovalov;
+package com.org.ita.kata.implementation.StanislavKovalov;
 
-import main.java.com.org.ita.kata.Eight;
+import com.org.ita.kata.BaseKata;
+import com.org.ita.kata.Eight;
 
-public class EightImpl implements Eight {
+public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
         return 0;

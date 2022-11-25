@@ -1,8 +1,9 @@
-package main.java.com.org.ita.kata.implementation.KovalyovVladyslav;
+package com.org.ita.kata.implementation.KovalyovVladyslav;
 
-import main.java.com.org.ita.kata.Six;
+import com.org.ita.kata.BaseKata;
+import com.org.ita.kata.Six;
 
-public class SixImpl implements Six {
+public class SixImpl extends BaseKata implements Six {
     @Override
     public long findNb(long m) {
         return 0;

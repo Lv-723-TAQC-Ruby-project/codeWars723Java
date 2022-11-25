@@ -1,11 +1,17 @@
-package main.java.com.org.ita.kata.implementation.KmytiukNatalyia;
+package com.org.ita.kata.implementation.KmytiukNatalyia;
 
-import main.java.com.org.ita.kata.Six;
+import com.org.ita.kata.BaseKata;
+import com.org.ita.kata.Six;
 
-public class SixImpl implements Six {
+public class SixImpl extends BaseKata implements Six {
     @Override
     public long findNb(long m) {
-        return 0;
+        long num = 0;
+        long n = 0;
+        for (n = 1; num < m; n++) {
+            num += (long) Math.pow(n, 3);
+        }
+        return num == m ? n - 1 : -1;
     }
 
     @Override
@@ -15,7 +21,7 @@ public class SixImpl implements Six {
 
     @Override
     public double f(double x) {
-        return 0;
+        return  x / (1 + Math.sqrt(1 + x));
     }
 
     @Override
