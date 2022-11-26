@@ -27,7 +27,9 @@ public class SevenImpl extends BaseKata implements Seven {
     }
 
     @Override
-    public int whereIsHe(int p, int bef, int aft) {
-        return 0;
+    public int whereIsHe(int p, int bef, int aft)  {
+        int person = bef + 1;
+        while (p - person > aft) { person++;}
+        return p - person + 1;
     }
 }

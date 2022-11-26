@@ -17,4 +17,9 @@ public class EightTest extends EightDataProvider{
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(dataProvider = "dataStringToNumber")
+    public void stringToNumber(Eight impl, String data, int expected) {
+        int actual = impl.stringToNumber(data);
+        Assert.assertEquals(actual, expected);
+    }
 }
