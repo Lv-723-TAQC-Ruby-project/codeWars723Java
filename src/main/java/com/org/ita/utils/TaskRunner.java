@@ -47,7 +47,44 @@ public class TaskRunner {
             case 10:
                 runWhereIsHe();
                 break;
-
+            case 11:
+                runFindNb();
+                break;
+            case 12:
+                runBalance();
+                break;
+            case 13:
+                runF();
+                break;
+            case 14:
+                runMean();
+                break;
+            case 15:
+                runVariance();
+                break;
+            case 16:
+                runNbaCup();
+                break;
+            case 17:
+                runStockSummary();
+                break;
+            case 18:
+                runArtificialRain();
+                break;
+            case 19:
+                runGap();
+                break;
+            case 20:
+                runZeros();
+                break;
+            case 21:
+                runPerimeter();
+                break;
+            case 22:
+                runSolveSum();
+                break;
+            case 23:
+                runSmallest();
         }
     }
     public void runLiters() {
@@ -91,6 +128,43 @@ public class TaskRunner {
     public void runWhereIsHe() {
         // To do
     }
-
-
+    public void runFindNb() {
+        // To do
+    }
+    public void runBalance() {
+        // To do
+    }
+    public void runF() {
+        // To do
+    }
+    public void runMean() {
+        // To do
+    }
+    public void runVariance() {
+        // To do
+    }
+    public void runNbaCup() {
+        // To do
+    }
+    public void runStockSummary() {
+        // To do
+    }
+    public void runArtificialRain() {
+        // To do
+    }
+    public void runGap() {
+        // To do
+    }
+    public void runZeros() {
+        // To do
+    }
+    public void runPerimeter() {
+        // To do
+    }
+    public void runSolveSum() {
+        // To do
+    }
+    public void runSmallest() {
+        // To do
+    }
 }
