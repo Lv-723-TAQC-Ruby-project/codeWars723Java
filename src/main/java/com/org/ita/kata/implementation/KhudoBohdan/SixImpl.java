@@ -4,7 +4,7 @@ import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
 
 import java.util.ArrayList;
-import java.util.Arrays;
+
 
 public class SixImpl extends BaseKata implements Six {
     @Override
@@ -127,11 +127,91 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public String nbaCup(String resultSheet, String toFind) {
-        return null;
+        if (toFind.isEmpty()) {
+            return toFind;
+        }
+
+        if (!resultSheet.matches(String.format("(.*)%s\\s(.*)", toFind))) {
+            return toFind + ":This team didn't play!";
+        }
+
+        String[] resultArr = resultSheet.split(",");
+        int win = 0;
+        int draws = 0;
+        int lost = 0;
+        int scored = 0;
+        int conceded = 0;
+
+        for (String result : resultArr) {
+            if (result.contains(toFind)) {
+                String[] arr = result.replaceAll(toFind, "team").split(" ");
+
+                String point1Str;
+                String point2Str;
+                if (arr[0].equals("team")) {
+                    point1Str = arr[1];
+                    point2Str = arr[arr.length - 1];
+                }
+                else {
+                    point1Str = arr[arr.length - 1];
+                    point2Str = arr[arr.length - 3];
+                }
+
+                int point1, point2;
+                try {
+                    point1 = Integer.parseInt(point1Str);
+                    point2 = Integer.parseInt(point2Str);
+                }
+                catch (Exception e) {
+                    return  "Error(float number):" + result;
+                }
+
+                if (point1 > point2) {
+                    win++;
+                }
+                else if (point1 < point2) {
+                    lost++;
+                }
+                else if (point1 == point2) {
+                    draws++;
+                }
+
+                scored += point1;
+                conceded += point2;
+            }
+        }
+        int points = win * 3 + draws;
+
+        return String.format("%s:W=%d;D=%d;L=%d;Scored=%d;Conceded=%d;Points=%d", toFind, win, draws, lost, scored, conceded, points);
     }
 
     @Override
     public String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
-        return null;
+        if (lstOfArt.length == 0 || lstOf1stLetter.length == 0) {
+            return "";
+        }
+
+        int[] sum = new int[lstOf1stLetter.length];
+        for (int i = 0; i < lstOf1stLetter.length; i++) {
+            sum[i] = 0;
+        }
+
+        String[] books;
+        for (String b : lstOfArt) {
+            books = b.split(" ");
+            for (int i = 0; i < lstOf1stLetter.length; i++) {
+                if (books[0].charAt(0) == lstOf1stLetter[i].charAt(0)) {
+                    sum[i] += Integer.parseInt(books[1]);
+                }
+            }
+        }
+
+        StringBuilder result = new StringBuilder();
+        for (int i = 0; i < lstOf1stLetter.length - 1; i++) {
+            result.append(String.format("(%s : %d) - ", lstOf1stLetter[i], sum[i]));
+        }
+        result.append(String.format("(%s : %d)", lstOf1stLetter[lstOf1stLetter.length - 1], sum[lstOf1stLetter.length - 1]));
+
+        return result.toString();
     }
 }
