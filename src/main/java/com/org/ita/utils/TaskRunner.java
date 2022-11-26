@@ -17,6 +17,37 @@ public class TaskRunner {
             case 0:
                 runLiters();
                 break;
+            case 1:
+                runGetVolumeOfCuboid();
+                break;
+            case 2:
+                runMpgToKPM();
+                break;
+            case 3:
+                runSquareOrSquareRoot();
+                break;
+            case 4:
+                runStringToNumber();
+                break;
+            case 5:
+                runAmIWilson();
+                break;
+            case 6:
+                runTwoDecimalPlaces();
+                break;
+            case 7:
+                runDivisibleBy();
+                break;
+            case 8:
+                runNewAvg();
+                break;
+            case 9:
+                runSeriesSum();
+                break;
+            case 10:
+                runWhereIsHe();
+                break;
+
         }
     }
     public void runLiters() {
@@ -25,6 +56,36 @@ public class TaskRunner {
         double hours = reader.readDouble();
         int result = user.getEight().liters(hours);
         System.out.println("Result - " + result + " hours.");
+    }
+    public void runGetVolumeOfCuboid() {
+        // To do
+    }
+    public void runMpgToKPM() {
+        // To do
+    }
+    public void runSquareOrSquareRoot() {
+        // To do
+    }
+    public void runStringToNumber() {
+        // To do
+    }
+    public void runAmIWilson() {
+        // To do
+    }
+    public void runTwoDecimalPlaces() {
+        // To do
+    }
+    public void runDivisibleBy() {
+        // To do
+    }
+    public void runNewAvg() {
+        // To do
+    }
+    public void runSeriesSum() {
+        // To do
+    }
+    public void runWhereIsHe() {
+        // To do
     }
 
 
