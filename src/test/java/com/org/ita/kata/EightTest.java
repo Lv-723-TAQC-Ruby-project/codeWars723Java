@@ -17,10 +17,18 @@ public class EightTest extends EightDataProvider{
         Assert.assertEquals(actual, expected);
     }
 
+<<<<<<< HEAD
     @Test(dataProvider = "squareOrSquareRoot" )
     public void squareOrSquareRoot(Eight impl, int [] data, int[] expected){
         int [] actual = impl.squareOrSquareRoot(data);
         Assert.assertEquals(actual, expected);
     }
 
+=======
+    @Test(dataProvider = "dataStringToNumber")
+    public void stringToNumber(Eight impl, String data, int expected) {
+        int actual = impl.stringToNumber(data);
+        Assert.assertEquals(actual, expected);
+    }
+>>>>>>> 9563ee1c6a9346709830472dc74488a06945a61b
 }

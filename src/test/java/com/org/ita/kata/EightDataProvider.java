@@ -45,4 +45,15 @@ public class EightDataProvider extends BaseDataProvider {
         };
         return combineImplWithTests(EIGHTS_IMPL,testData);
     }
+
+    @DataProvider (name = "dataStringToNumber")
+    public Object [][] StringToNumberData() {
+        Object [][] test = new Object[][] {
+                {"2022", 2022},
+                {"11", 11},
+                {"-5", -5}
+        };
+        return combineImplWithTests(EIGHTS_IMPL, test);
+    }
+
 }
