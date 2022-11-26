@@ -17,4 +17,10 @@ public class EightTest extends EightDataProvider{
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(dataProvider = "squareOrSquareRoot" )
+    public void squareOrSquareRoot(Eight impl, int [] data, int[] expected){
+        int [] actual = impl.squareOrSquareRoot(data);
+        Assert.assertEquals(actual, expected);
+    }
+
 }
