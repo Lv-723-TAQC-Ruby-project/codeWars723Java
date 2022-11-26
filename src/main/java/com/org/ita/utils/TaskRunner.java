@@ -70,7 +70,11 @@ public class TaskRunner {
         // To do
     }
     public void runAmIWilson() {
-        // To do
+        System.out.println("Run task am I Wilson");
+        System.out.println("Please, input number to check: ");
+        int number = reader.readInteger();
+        boolean result = user.getEight().amIWilson(number);
+        System.out.println("Is this number wilson number? -> " + result);
     }
     public void runTwoDecimalPlaces() {
         // To do
