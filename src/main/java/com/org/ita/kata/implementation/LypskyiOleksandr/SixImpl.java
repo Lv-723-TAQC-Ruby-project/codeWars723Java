@@ -113,6 +113,25 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
-        return null;
+         String toReturn = "";
+        if (lstOfArt.length != 0 && lstOf1stLetter.length != 0) {
+            for (int i = 0; i < lstOf1stLetter.length; i++) {
+                String category = lstOf1stLetter[i];
+                int count = 0;
+                for (String Artstr : lstOfArt) {
+                    if (Artstr.substring(0, 1).equals(category)) {
+                        String[] book = Artstr.split(" ");
+                        count += Integer.parseInt(book[1]);
+                    }
+                }
+                String stock = "(" + category + " : " + count + ")";
+                if (i != (lstOf1stLetter.length - 1)) {
+                    toReturn += stock + " - ";
+                } else {
+                    toReturn += stock;
+                }
+            }
+        }
+        return toReturn;
     }
 }
