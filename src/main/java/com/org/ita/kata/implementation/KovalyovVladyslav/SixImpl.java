@@ -44,6 +44,7 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public double variance(String town, String strng) {
+
         return 0;
     }
 

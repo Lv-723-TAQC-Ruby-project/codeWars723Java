@@ -45,7 +45,6 @@ public class EightDataProvider extends BaseDataProvider {
         };
         return combineImplWithTests(EIGHTS_IMPL,testData);
     }
-
     @DataProvider (name = "dataStringToNumber")
     public Object [][] StringToNumberData() {
         Object [][] test = new Object[][] {
