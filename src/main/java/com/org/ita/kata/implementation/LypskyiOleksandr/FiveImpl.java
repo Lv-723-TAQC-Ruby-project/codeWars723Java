@@ -8,7 +8,19 @@ import java.math.BigInteger;
 public class FiveImpl extends BaseKata implements Five {
     @Override
     public int artificialRain(int[] v) {
-        return 0;
+        int left = 0;
+        int longestSection = 0;
+        int currentSection = 1;
+        for (int i = 1; i < v.length; i++) {
+            if (v[i] < v[i - 1]) {
+                left = i;
+            } else if (v[i] > v[i - 1]) {
+                longestSection = Math.max(longestSection, currentSection);
+                currentSection = i - left;
+            }
+            currentSection += 1;
+        }
+        return Math.max(longestSection, currentSection);
     }
 
     @Override

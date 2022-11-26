@@ -28,6 +28,10 @@ public class SevenImpl extends BaseKata implements Seven {
 
     @Override
     public int whereIsHe(int p, int bef, int aft) {
-        return 0;
+        int human = bef + 1;
+        while (p - human > aft) {
+            human++;
+        }
+        return p - human + 1;
     }
 }
