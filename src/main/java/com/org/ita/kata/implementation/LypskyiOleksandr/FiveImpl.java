@@ -30,7 +30,13 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public int zeros(int n) {
-        return 0;
+        if (n < 5) return 0;
+        int count = 0;
+        while (n >= 5) {
+            n /= 5;
+            count += n;
+        }
+        return count;
     }
 
     @Override
