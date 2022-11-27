@@ -11,7 +11,7 @@ import java.util.List;
 public class Main {
 
     public static void main(String[] args) {
-        List<String> tasks = List.of("Keep Hydrated!", "Volume", "Miles per gallon to kilometers per liter", "To square root or no to square", "Count of positives / sum of negatives", "Convert a String to a Number", "Willson primes", "Formatting decimal places", "Find numbers which are divisible by given number", "Looking for a benefactor", "Sum of the first nth term of Series", "Where is Vasya?", "Build a pile of Cubes", "Easy balance checking", "Floating-point Approximation (I)", "Rainfall", "Ranking NBA", "Help the bookseller!", "Artificial Rain", "Gap in Primes", "Trailing zeros in factorial", "Perimeter of squares in a rectangle", "Which x for that sum?", "Find the smallest");
+        List<String> tasks = List.of("Keep Hydrated!", "Volume", "Miles per gallon to kilometers per liter", "To square root or no to square", "Count of positives / sum of negatives", "Convert a String to a Number", "Willson primes", "Formatting decimal places", "Find numbers which are divisible by given number", "Looking for a benefactor", "Sum of the first nth term of Series", "Where is Vasya?", "Build a pile of Cubes", "Easy balance checking", "Floating-point Approximation (I)", "Rainfall: mean", "Rainfall: variance", "Ranking NBA", "Help the bookseller!", "Artificial Rain", "Gap in Primes", "Trailing zeros in factorial", "Perimeter of squares in a rectangle", "Which x for that sum?", "Find the smallest");
         ConsoleReader reader = new ConsoleReader();
         TaskRunner taskRunner = new TaskRunner();
         boolean run = true;
