@@ -1,4 +1,14 @@
 package com.org.ita.kata;
 
-public class FiveTest extends FiveDataProvider{
+import com.org.ita.kata.implementation.OmetiukhSofiia.FiveImpl;
+import org.testng.Assert;
+import org.testng.annotations.Test;
+
+public class FiveTest extends FiveDataProvider {
+
+    @Test(dataProvider = "Gap in Primes")
+    public void gap(Five impl, int g, long m, long n, long[] expected) {
+        long[] actual = impl.gap(g, m, n);
+        Assert.assertEquals(actual, expected);
+    }
 }
