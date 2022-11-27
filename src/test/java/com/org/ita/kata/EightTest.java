@@ -11,6 +11,12 @@ public class EightTest extends EightDataProvider{
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(dataProvider = "Volume of a Cuboid")
+    public void getVolumeOfCuboid(Eight impl, double length, double width,double height, int expected){
+        double actual = impl.getVolumeOfCuboid(length, width, height);
+        Assert.assertEquals(actual, expected);
+    }
+
     @Test(dataProvider = "dataAmIWilson")
     public void amIWilsonTest(Eight impl, double data, boolean expected) {
         boolean actual = impl.amIWilson(data);
