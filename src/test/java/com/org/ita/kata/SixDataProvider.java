@@ -19,4 +19,15 @@ public class SixDataProvider extends BaseDataProvider{
         };
         return combineImplWithTests(SIX_IMPL, testData);
     }
+
+    @DataProvider(name = "Floating-point Approximation")
+    public Object [][] testFloatingPointApproximation(){
+        Object [][] dataTest = new Object[][]{
+                {2.6e-08, 1.29999999155e-08},
+                {1.4e-09, 6.999999997549999e-10},
+                {5.0e-06, 2.499996875007812e-06},
+                {2.4e-07, 1.1999999280000085e-07}
+        };
+        return combineImplWithTests(SIX_IMPL, dataTest);
+    }
 }

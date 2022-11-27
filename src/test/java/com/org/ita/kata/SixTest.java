@@ -16,4 +16,9 @@ public class SixTest extends SixDataProvider{
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(dataProvider = "Floating-point Approximation")
+    public void floatingPointApproximationTest(Six impl, double data, double expected){
+        double actualResult = impl.f(data);
+        Assert.assertEquals(actualResult, expected);
+    }
 }
