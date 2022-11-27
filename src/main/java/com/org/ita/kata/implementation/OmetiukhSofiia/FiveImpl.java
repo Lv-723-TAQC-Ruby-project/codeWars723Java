@@ -17,7 +17,24 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public long[] gap(int g, long m, long n) {
-        return new long[0];
+        for (long i = m; i + g <= n; i++) {
+            if (isPrime(i) && isPrime(i + g) && gap(0, i + 1, i + g - 1) == null) {
+                return new long[]{i, i + g};
+            }
+        }
+        return null;
+    }
+
+    private static boolean isPrime(long num) {
+        if (num <= 1) return false;
+        if (num <= 3) return true;
+        if (num % 2 == 0 || num % 3 == 0) return false;
+        for (long i = 5; i * i < num; i += 6) {
+            if (num % i == 0 || num % (i + 2) == 0) {
+                return false;
+            }
+        }
+        return true;
     }
 
     @Override
