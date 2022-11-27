@@ -22,9 +22,21 @@ public class EightDataProvider extends BaseDataProvider {
         return combineImplWithTests(EIGHTS_IMPL, testData);
 
     }
+
+
+    @DataProvider(name = "Volume of a Cuboid")
+    public Object[][] getVolumeOfCuboid() {
+        Object[][] testData = new Object[][]{
+                {1, 2, 2, 4},
+                {6.3, 2, 5, 63}
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
+
     @DataProvider(name = "dataAmIWilson")
     public Object[][] amIWilsonData() {
-        Object[][] testData = new Object[][] {
+        Object[][] testData = new Object[][]{
                 {5, true},
                 {13, true},
                 {563, true},
@@ -35,4 +47,26 @@ public class EightDataProvider extends BaseDataProvider {
         };
         return combineImplWithTests(EIGHTS_IMPL, testData);
     }
+
+
+    @DataProvider(name = "squareOrSquareRoot")
+    public Object[][] squareOrSquareRoot() {
+        int[][][] testData = new int[][][]{
+                {{4, 3, 9, 7, 2, 1}, {2, 9, 3, 49, 4, 1}},
+                {{100, 101, 5, 5, 1, 1}, {10, 10201, 25, 25, 1, 1}},
+                {{1, 2, 3, 4, 5, 6}, {1, 4, 9, 2, 25, 36}},
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
+    @DataProvider(name = "dataStringToNumber")
+    public Object[][] StringToNumberData() {
+        Object[][] test = new Object[][]{
+                {"2022", 2022},
+                {"11", 11},
+                {"-5", -5}
+        };
+        return combineImplWithTests(EIGHTS_IMPL, test);
+    }
+
 }

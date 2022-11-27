@@ -6,28 +6,6 @@ import com.org.ita.kata.Five;
 import java.math.BigInteger;
 
 public class FiveImpl extends BaseKata implements Five {
-    private static boolean isPrime(int num) {
-        if (num == 2) return true;
-        if (num % 2 == 1) {
-            for (int i = 2; i <= num / 2; i++) {
-                if (num % i == 0) {
-                    return false;
-                }
-            }
-            return true;
-        }
-        return false;
-    }
-
-    public static long making(String s, int i, int j) {
-        StringBuilder sb = new StringBuilder(s);
-        char c = sb.charAt(i);
-        sb.deleteCharAt(i);
-        sb.insert(j, c);
-
-        return Long.valueOf(sb.toString());
-    }
-
     @Override
     public int artificialRain(int[] v) {
         int res = 0;
@@ -76,6 +54,19 @@ public class FiveImpl extends BaseKata implements Five {
             res = Math.max(res, leftR[i] + rightL[i] - 1);
         }
         return res;
+    }
+
+
+    private static boolean isPrime( int num){
+        if(num == 2) return true;
+        if(num % 2 == 1) {
+            for (int i =2; i<= num/2; i++){
+                if(num % i ==0) {
+                    return false;
+                }
+            }return true;
+        }
+        return false;
     }
 
     public long[] gap(int g, long m, long n) {
@@ -146,5 +137,13 @@ public class FiveImpl extends BaseKata implements Five {
         }
 
         return new long[]{res, n1, n2};
+    }
+    public static long making(String s, int i, int j) {
+        StringBuilder sb = new StringBuilder(s);
+        char c = sb.charAt(i);
+        sb.deleteCharAt(i);
+        sb.insert(j, c);
+
+        return Long.valueOf(sb.toString());
     }
 }

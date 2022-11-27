@@ -5,7 +5,7 @@ import org.apache.commons.lang3.SerializationUtils;
 public class BaseDataProvider {
 
 
-    public static final Eight[] EIGHTS_IMPL = new Eight[] {
+    public static final Eight[] EIGHTS_IMPL = new Eight[]{
             new com.org.ita.kata.implementation.BrylAndrii.EightImpl(),
             new com.org.ita.kata.implementation.FedykSvyatoslav.EightImpl(),
             new com.org.ita.kata.implementation.KhudoBohdan.EightImpl(),
@@ -17,7 +17,7 @@ public class BaseDataProvider {
             new com.org.ita.kata.implementation.StanislavKovalov.EightImpl(),
     };
 
-    public static final Seven[] SEVEN_IMPL = new Seven[] {
+    public static final Seven[] SEVEN_IMPL = new Seven[]{
             new com.org.ita.kata.implementation.BrylAndrii.SevenImpl(),
             new com.org.ita.kata.implementation.FedykSvyatoslav.SevenImpl(),
             new com.org.ita.kata.implementation.KhudoBohdan.SevenImpl(),
@@ -29,7 +29,7 @@ public class BaseDataProvider {
             new com.org.ita.kata.implementation.StanislavKovalov.SevenImpl(),
     };
 
-    public static final Six[] SIX_IMPL = new Six[] {
+    public static final Six[] SIX_IMPL = new Six[]{
             new com.org.ita.kata.implementation.BrylAndrii.SixImpl(),
             new com.org.ita.kata.implementation.FedykSvyatoslav.SixImpl(),
             new com.org.ita.kata.implementation.KhudoBohdan.SixImpl(),
@@ -41,7 +41,7 @@ public class BaseDataProvider {
             new com.org.ita.kata.implementation.StanislavKovalov.SixImpl(),
     };
 
-    public static final Five[] FIVE_IMPL = new Five[] {
+    public static final Five[] FIVE_IMPL = new Five[]{
             new com.org.ita.kata.implementation.BrylAndrii.FiveImpl(),
             new com.org.ita.kata.implementation.FedykSvyatoslav.FiveImpl(),
             new com.org.ita.kata.implementation.KhudoBohdan.FiveImpl(),
@@ -69,7 +69,6 @@ public class BaseDataProvider {
 
         return fullTestData;
     }
-
 
 
 }
