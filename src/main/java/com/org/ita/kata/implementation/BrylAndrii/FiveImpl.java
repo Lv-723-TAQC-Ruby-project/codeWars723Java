@@ -7,7 +7,7 @@ import java.math.BigInteger;
 
 public class FiveImpl extends BaseKata implements Five {
     @Override
-    public int artificialRain(int[] v) {
+    public int artificialRain(final int[] v) {
         return 0;
     }
 

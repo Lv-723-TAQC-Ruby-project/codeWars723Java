@@ -27,63 +27,66 @@ public class TaskRunner {
                 runSquareOrSquareRoot();
                 break;
             case 4:
-                runStringToNumber();
+                runCountPositivesSumNegatives();
                 break;
             case 5:
-                runAmIWilson();
+                runStringToNumber();
                 break;
             case 6:
-                runTwoDecimalPlaces();
+                runAmIWilson();
                 break;
             case 7:
-                runDivisibleBy();
+                runTwoDecimalPlaces();
                 break;
             case 8:
-                runNewAvg();
+                runDivisibleBy();
                 break;
             case 9:
-                runSeriesSum();
+                runNewAvg();
                 break;
             case 10:
-                runWhereIsHe();
+                runSeriesSum();
                 break;
             case 11:
-                runFindNb();
+                runWhereIsHe();
                 break;
             case 12:
-                runBalance();
+                runFindNb();
                 break;
             case 13:
-                runF();
+                runBalance();
                 break;
             case 14:
-                runMean();
+                runF();
                 break;
             case 15:
-                runVariance();
+                runMean();
                 break;
             case 16:
-                runNbaCup();
+                runVariance();
                 break;
             case 17:
-                runStockSummary();
+                runNbaCup();
                 break;
             case 18:
-                runArtificialRain();
+                runStockSummary();
                 break;
             case 19:
-                runGap();
+                runArtificialRain();
                 break;
             case 20:
-                runZeros();
+                runGap();
                 break;
             case 21:
-                runPerimeter();
+                runZeros();
                 break;
             case 22:
-                runSolveSum();
+                runPerimeter();
                 break;
             case 23:
+                runSolveSum();
+                break;
+            case 24:
                 runSmallest();
         }
     }
@@ -102,6 +105,9 @@ public class TaskRunner {
     }
     public void runSquareOrSquareRoot() {
         // To do
+    }
+    public void runCountPositivesSumNegatives() {
+        //To do
     }
     public void runStringToNumber() {
         // To do
@@ -153,6 +159,7 @@ public class TaskRunner {
         System.out.println("Please enter data to deal with: ");
         String data = reader.readString();
         double result = user.getSix().variance(city, data);
+        System.out.println("Result is: " + result);
     }
     public void runNbaCup() {
         // To do

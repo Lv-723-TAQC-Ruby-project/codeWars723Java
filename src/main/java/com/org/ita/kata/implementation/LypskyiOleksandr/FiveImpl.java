@@ -30,17 +30,33 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public int zeros(int n) {
-        return 0;
+        if (n < 5) return 0;
+        int count = 0;
+        while (n >= 5) {
+            n /= 5;
+            count += n;
+        }
+        return count;
     }
 
     @Override
     public BigInteger perimeter(BigInteger n) {
-        return null;
+        BigInteger totalSum = BigInteger.valueOf(0);
+        BigInteger firstNum;
+        BigInteger secondNum = BigInteger.valueOf(1);
+        BigInteger thirdNum = BigInteger.valueOf(1);
+        for (int i = 0; i <= n.intValue(); i++) {
+            firstNum = secondNum;
+            secondNum = thirdNum;
+            thirdNum = firstNum.add(secondNum);
+            totalSum = totalSum.add(firstNum);
+        }
+        return totalSum.multiply(BigInteger.valueOf(4));
     }
 
     @Override
     public double solveSum(double m) {
-        return 0;
+        return (2 * m + 1 - Math.sqrt(4 * m + 1)) / (2 * m);
     }
 
     @Override

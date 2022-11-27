@@ -42,11 +42,14 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public double solveSum(double m) {
-        return 0;
+        double f = Math.sqrt(4 * m + 1);
+        double result = (2 * m + 1 - f) / (2 * m);
+        return result;
     }
 
     @Override
     public long[] smallest(long n) {
+
         return new long[0];
     }
 }
