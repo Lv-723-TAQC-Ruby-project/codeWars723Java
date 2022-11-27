@@ -108,7 +108,53 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public String nbaCup(String resultSheet, String toFind) {
-        return null;
+         if (resultSheet == null || resultSheet.isEmpty() || toFind == null || toFind.isEmpty()) return "";
+        HashMap<String, int[]> team_results = new HashMap<>();
+        String[] raw_data = resultSheet.split(",");
+        Pattern firstDigitRegex = Pattern.compile("\\d{2,3}");
+        Pattern lastDigitRegex = Pattern.compile("\\d{2,3}$");
+        for (String res : raw_data) {
+            if (res.contains(".")) return "Error(float number):" + res;
+            res = res.replaceAll(",$", "");
+            Matcher firstScoreMatcher = firstDigitRegex.matcher(res);
+            Matcher secondScoreMatcher = lastDigitRegex.matcher(res);
+            firstScoreMatcher.find();
+            int first_team_score = Integer.parseInt(firstScoreMatcher.group(0));
+            secondScoreMatcher.find();
+            int second_team_score = Integer.parseInt(secondScoreMatcher.group(0));
+            String[] team_names = res.split(String.valueOf(first_team_score));
+            String first_team_name = team_names[0].strip();
+            String[] second_team_name_array = team_names[1].split(" ");
+            second_team_name_array = Arrays.copyOfRange(second_team_name_array, 1, second_team_name_array.length - 1);
+            String second_team_name = String.join(" ", second_team_name_array).strip();
+            team_results.putIfAbsent(first_team_name, new int[]{0, 0, 0, 0, 0, 0});
+            team_results.putIfAbsent(second_team_name, new int[]{0, 0, 0, 0, 0, 0});
+            int[] first_team_stats = team_results.get(first_team_name);
+            int[] second_team_stats = team_results.get(second_team_name);
+            if (first_team_score > second_team_score) {
+                first_team_stats[0] += 1;
+                first_team_stats[3] += first_team_score;
+                first_team_stats[4] += second_team_score;
+                first_team_stats[5] += 3;
+                second_team_stats[2] += 1;
+                second_team_stats[3] += second_team_score;
+                second_team_stats[4] += first_team_score;
+            } else {
+                second_team_stats[0] += 1;
+                second_team_stats[3] += second_team_score;
+                second_team_stats[4] += first_team_score;
+                second_team_stats[5] += 3;
+                first_team_stats[2] += 1;
+                first_team_stats[3] += first_team_score;
+                first_team_stats[4] += second_team_score;
+            }
+        }
+        if (team_results.containsKey(toFind)) {
+            int[] team_stats = team_results.get(toFind);
+            return toFind + ":W=" + team_stats[0] + ";D=" + team_stats[1] + ";L=" + team_stats[2] + ";Scored=" + team_stats[3] + ";Conceded=" + team_stats[4] + ";Points=" + team_stats[5];
+        } else {
+            return toFind + ":This team didn't play!";
+        }
     }
 
     @Override
