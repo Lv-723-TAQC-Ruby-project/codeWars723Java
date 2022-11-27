@@ -138,10 +138,21 @@ public class TaskRunner {
         // To do
     }
     public void runMean() {
-        // To do
+        System.out.println("Run task Rainfall: mean (return average for city)");
+        System.out.println("Please, enter city to check: ");
+        String city = reader.readString();
+        System.out.println("Please, enter data to define average from: ");
+        String data = reader.readString();
+        double result = user.getSix().mean(city, data);
+        System.out.println("Average for " + city + " is " + result);
     }
     public void runVariance() {
-        // To do
+        System.out.println("Run task Rainfall: variance (should return the variance of rainfall for the city)");
+        System.out.println("Please, enter city to check: ");
+        String city = reader.readString();
+        System.out.println("Please enter data to deal with: ");
+        String data = reader.readString();
+        double result = user.getSix().variance(city, data);
     }
     public void runNbaCup() {
         // To do
