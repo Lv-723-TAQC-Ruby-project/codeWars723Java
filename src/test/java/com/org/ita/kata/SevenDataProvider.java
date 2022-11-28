@@ -13,4 +13,13 @@ public class SevenDataProvider extends BaseDataProvider{
         };
         return combineImplWithTests(SEVEN_IMPL, testData);
     }
+
+    @DataProvider(name = "dataWhereIsHe")
+    public Object[][] whereIsHe(){
+        Object[][]testData = new Object[][]{
+                {3, 1, 1, 2},
+                {5, 2, 3, 3}
+        };
+        return combineImplWithTests(SEVEN_IMPL, testData);
+    }
 }

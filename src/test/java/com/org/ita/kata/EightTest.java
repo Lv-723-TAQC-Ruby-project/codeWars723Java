@@ -22,10 +22,20 @@ public class EightTest extends EightDataProvider {
         boolean actual = impl.amIWilson(data);
         Assert.assertEquals(actual, expected);
     }
+<<<<<<< HEAD
 
 
     @Test(dataProvider = "dataSquareOrSquareRoot" )
     public void squareOrSquareRootTest(Eight impl, int [] data, int[] expected){
+=======
+    @Test(dataProvider = "twoDecimalPlaces")
+    public void twoDecimalPlacesTest(Eight impl, double data, double expected) {
+        double actual = impl.twoDecimalPlaces(data);
+        Assert.assertEquals(actual, expected);
+    }
+    @Test(dataProvider = "squareOrSquareRoot" )
+    public void squareOrSquareRoot(Eight impl, int [] data, int[] expected){
+>>>>>>> ebe75a2a70bafed249171ebae612d43bfae50c06
         int [] actual = impl.squareOrSquareRoot(data);
         Assert.assertEquals(actual, expected);
     }
@@ -35,5 +45,19 @@ public class EightTest extends EightDataProvider {
         int actual = impl.stringToNumber(data);
         Assert.assertEquals(actual, expected);
     }
+<<<<<<< HEAD
 
+=======
+    @Test(dataProvider = "dataMpgToKPM")
+    public void mpgToKPM(Eight impl, float mpg, float expected) {
+        float actual = impl.mpgToKPM(mpg);
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test(dataProvider = "dataCountPositivesSumNegatives")
+    public void countPositivesSumNegatives(Eight impl, int[] input, int[] expected) {
+        int[] actual = impl.countPositivesSumNegatives(input);
+        Assert.assertEquals(actual, expected);
+    }
+>>>>>>> ebe75a2a70bafed249171ebae612d43bfae50c06
 }

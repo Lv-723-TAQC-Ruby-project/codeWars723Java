@@ -26,15 +26,15 @@ public class EightImpl extends BaseKata implements Eight {
 
     @Override
     public int[] squareOrSquareRoot(int[] array) {
-        int[] array_to_return = new int[array.length];
+        int[] arrayToReturn = new int[array.length];
         for (int i = 0; i < array.length; i++) {
             if ((int) Math.sqrt(array[i]) == Math.sqrt(array[i])) {
-                array_to_return[i] = (int) Math.sqrt(array[i]);
+                arrayToReturn[i] = (int) Math.sqrt(array[i]);
             } else {
-                array_to_return[i] = (int) Math.pow(array[i], 2);
+                arrayToReturn[i] = (int) Math.pow(array[i], 2);
             }
         }
-        return array_to_return;
+        return arrayToReturn;
     }
 
     @Override
@@ -45,17 +45,17 @@ public class EightImpl extends BaseKata implements Eight {
             return new int[]{};
         }
 
-        int positive_numbers = 0;
-        int negative_numbers_sum = 0;
+        int positiveNumbers = 0;
+        int negativeNumbersSum = 0;
 
         for (int i : input) {
             if (i > 0) {
-                positive_numbers++;
+                positiveNumbers++;
             } else {
-                negative_numbers_sum += i;
+                negativeNumbersSum += i;
             }
         }
-        return new int[]{positive_numbers, negative_numbers_sum};
+        return new int[]{positiveNumbers, negativeNumbersSum};
     }
 
     @Override

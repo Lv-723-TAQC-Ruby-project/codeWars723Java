@@ -48,6 +48,15 @@ public class EightDataProvider extends BaseDataProvider {
         return combineImplWithTests(EIGHTS_IMPL, testData);
     }
 
+    @DataProvider(name = "twoDecimalPlaces")
+    public Object[][] twoDecimalPlaces() {
+        Object[][] testData = new Object[][]{
+                {4.659725356, 4.66},
+                {173735326.3783732637948948, 173735326.38},
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
 
     @DataProvider(name = "dataSquareOrSquareRoot")
     public Object[][] squareOrSquareRootTest() {
@@ -67,6 +76,26 @@ public class EightDataProvider extends BaseDataProvider {
                 {"-5", -5}
         };
         return combineImplWithTests(EIGHTS_IMPL, test);
+    }
+
+
+    @DataProvider(name = "dataMpgToKPM")
+    public Object[][] mpgToKPM() {
+        Object[][] testData = new Object[][]{
+                {10, 3.54f},
+                {20, 7.08f},
+                {30, 10.62f},
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
+    @DataProvider(name = "dataCountPositivesSumNegatives")
+    public Object[][] countPositivesSumNegatives() {
+        Object[][] testData = new Object[][]{
+                {new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15},new int[]{10, -65}},
+                {new int[] {0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14},new int[] {8, -50}}
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
     }
 
 }

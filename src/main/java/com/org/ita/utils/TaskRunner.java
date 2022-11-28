@@ -101,7 +101,11 @@ public class TaskRunner {
         // To do
     }
     public void runMpgToKPM() {
-        // To do
+        System.out.println("Run task Miles per gallon to kilometers per liter\n");
+        System.out.println("Please, input float to check: ");
+        float number = reader.readFloat();
+        float result = user.getEight().mpgToKPM(number);
+        System.out.println("The result of converting -> " + result);
     }
     public void runSquareOrSquareRoot() {
         // To do
@@ -132,7 +136,15 @@ public class TaskRunner {
         // To do
     }
     public void runWhereIsHe() {
-        // To do
+        System.out.println("Run task Where is Vasya?\n");
+        System.out.println("Please, input integers: 1. total amount of people in the line;\n");
+        int p = reader.readInteger();
+        System.out.println("2. number of people standing in front of him\n");
+        int bef = reader.readInteger();
+        System.out.println("3. number of people standing behind him");
+        int aft = reader.readInteger();
+        int result = user.getSeven().whereIsHe(p,bef,aft);
+        System.out.println("Vasya's position  -> " + result);
     }
     public void runFindNb() {
         // To do
@@ -174,7 +186,11 @@ public class TaskRunner {
         // To do
     }
     public void runZeros() {
-        // To do
+        System.out.println("Run task am Number of trailing zeros of N!");
+        System.out.println("Please, input number to check of trailing zeros: ");
+        int number = reader.readInteger();
+        int result = user.getFive().zeros(number);
+        System.out.println("The number of trailing zeros in a factorial of a given number is -> " + result);
     }
     public void runPerimeter() {
         // To do
