@@ -15,5 +15,10 @@ public class SixTest extends SixDataProvider{
         double actual = impl.variance(towns, data);
         Assert.assertEquals(actual, expected);
     }
+    @Test(dataProvider = "dataBalanceCheck")
+    public void balanceTest(Six impl, String data, String expected) {
+        String actual = impl.balance(data);
+        Assert.assertEquals(actual, expected);
+    }
 
 }

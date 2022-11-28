@@ -25,4 +25,15 @@ public class FiveDataProvider extends BaseDataProvider{
         };
         return combineImplWithTests(FIVE_IMPL, testData);
     }
+
+    @DataProvider(name = "dataSolveSum")
+    public Object[][] solveSumData(){
+        Object[][] testData = new Object[][] {
+                {2.00, 5.000000000000e-01},
+                {4.00, 6.096117967978e-01},
+                {5.00, 6.417424305044e-01}
+        };
+        return combineImplWithTests(FIVE_IMPL, testData);
+    }
+
 }

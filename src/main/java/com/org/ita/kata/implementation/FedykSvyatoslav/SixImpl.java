@@ -4,6 +4,8 @@ import static java.util.stream.Collectors.averagingDouble;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Locale;
+
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
 
@@ -23,16 +25,16 @@ public class SixImpl extends BaseKata implements Six {
         String[] splittedBook = book.replaceAll("[^a-zA-Z0-9 \\n.]","").replaceAll(" {2,}", " ").split("\n");
         double balance = Double.parseDouble(splittedBook[0]);
         double expense = 0;
-        result.append("Original Balance: ").append(String.format("%1$.2f", balance)).append("\\r\\n");
+        result.append("Original Balance: ").append(String.format(Locale.US,"%1$.2f", balance)).append("\\r\\n");
         for(int i = 1; i < splittedBook.length; i++) {
             String[] splittedItem = splittedBook[i].split(" ");
             double itemExpense = Double.parseDouble(splittedItem[splittedItem.length - 1]);
             balance -= itemExpense;
             expense += itemExpense;
-            result.append(splittedBook[i].trim()).append(" Balance ").append(String.format("%1$.2f", balance)).append("\\r\\n");
+            result.append(splittedBook[i].trim()).append(" Balance ").append(String.format(Locale.US,"%1$.2f", balance)).append("\\r\\n");
         }
-        result.append("Total expense  ").append(String.format("%1$.2f", expense)).append("\\r\\n");
-        result.append("Average expense  ").append(String.format("%1$.2f", expense / (splittedBook.length - 1)));
+        result.append("Total expense  ").append(String.format(Locale.US,"%1$.2f", expense)).append("\\r\\n");
+        result.append("Average expense  ").append(String.format(Locale.US,"%1$.2f", expense / (splittedBook.length - 1)));
 
         return result.toString();
     }

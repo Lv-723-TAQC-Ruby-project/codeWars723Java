@@ -23,7 +23,7 @@ public class EightTest extends EightDataProvider {
         Assert.assertEquals(actual, expected);
     }
     @Test(dataProvider = "twoDecimalPlaces")
-    public void twoDecimalPlaces(Eight impl, double data, double expected) {
+    public void twoDecimalPlacesTest(Eight impl, double data, double expected) {
         double actual = impl.twoDecimalPlaces(data);
         Assert.assertEquals(actual, expected);
     }
