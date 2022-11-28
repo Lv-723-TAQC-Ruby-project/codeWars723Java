@@ -132,7 +132,11 @@ public class TaskRunner {
         System.out.println("Is this number wilson number? -> " + result);
     }
     public void runTwoDecimalPlaces() {
-        // To do
+        System.out.println("Run task two decimal places");
+        System.out.println("Please, input number to round: ");
+        double number = reader.readDouble();
+        double result = user.getEight().twoDecimalPlaces(number);
+        System.out.println("You number is rounded to two decimal places -> " + result);
     }
     public void runDivisibleBy() {
         // To do
@@ -186,7 +190,13 @@ public class TaskRunner {
         System.out.println("Result is: " + result);
     }
     public void runNbaCup() {
-        // To do
+        System.out.println("Run task Ranking NBA:");
+        System.out.println("Please, enter team's name to see the scores: ");
+        String toFind = reader.readString();
+        System.out.println("Please, enter scores: ");
+        String resultSheet = reader.readString();
+        String result = user.getSix().nbaCup(resultSheet,toFind);
+        System.out.println(" " + result);
     }
     public void runStockSummary() {
         // To do
