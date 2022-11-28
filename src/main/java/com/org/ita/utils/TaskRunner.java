@@ -101,7 +101,11 @@ public class TaskRunner {
         // To do
     }
     public void runMpgToKPM() {
-        // To do
+        System.out.println("Run task Miles per gallon to kilometers per liter\n");
+        System.out.println("Please, input float to check: ");
+        float number = reader.readFloat();
+        float result = user.getEight().mpgToKPM(number);
+        System.out.println("The result of converting -> " + result);
     }
     public void runSquareOrSquareRoot() {
         // To do
