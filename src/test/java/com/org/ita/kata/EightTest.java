@@ -34,4 +34,9 @@ public class EightTest extends EightDataProvider {
         int actual = impl.stringToNumber(data);
         Assert.assertEquals(actual, expected);
     }
+    @Test(dataProvider = "dataMpgToKPM")
+    public void mpgToKPM(Eight impl, float mpg, float expected) {
+        float actual = impl.mpgToKPM(mpg);
+        Assert.assertEquals(actual, expected);
+    }
 }

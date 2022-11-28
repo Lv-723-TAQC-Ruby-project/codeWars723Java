@@ -69,4 +69,15 @@ public class EightDataProvider extends BaseDataProvider {
         return combineImplWithTests(EIGHTS_IMPL, test);
     }
 
+
+    @DataProvider(name = "dataMpgToKPM")
+    public Object[][] mpgToKPM() {
+        Object[][] testData = new Object[][]{
+                {10, 3.54f},
+                {20, 7.08f},
+                {30, 10.62f},
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
 }
