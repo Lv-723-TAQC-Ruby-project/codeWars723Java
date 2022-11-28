@@ -11,4 +11,10 @@ public class FiveTest extends FiveDataProvider {
         long[] actual = impl.gap(g, m, n);
         Assert.assertEquals(actual, expected);
     }
+
+    @Test(dataProvider = "dataZeros")
+    public void zeros(Five impl, int n, int expected) {
+        int actual = impl.zeros(n);
+        Assert.assertEquals(actual, expected);
+    }
 }

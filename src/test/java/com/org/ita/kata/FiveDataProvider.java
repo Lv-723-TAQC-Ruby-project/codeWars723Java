@@ -15,4 +15,14 @@ public class FiveDataProvider extends BaseDataProvider{
         };
     return combineImplWithTests(FIVE_IMPL, testData);
     }
+
+    @DataProvider(name = "dataZeros")
+    public Object[][] zeros(){
+        Object[][] testData = new Object[][] {
+                {0, 0},
+                {6, 1},
+                {14, 2}
+        };
+        return combineImplWithTests(FIVE_IMPL, testData);
+    }
 }

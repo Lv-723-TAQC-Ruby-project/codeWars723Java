@@ -186,7 +186,11 @@ public class TaskRunner {
         // To do
     }
     public void runZeros() {
-        // To do
+        System.out.println("Run task am Number of trailing zeros of N!");
+        System.out.println("Please, input number to check of trailing zeros: ");
+        int number = reader.readInteger();
+        int result = user.getFive().zeros(number);
+        System.out.println("the number of trailing zeros in a factorial of a given number is -> " + result);
     }
     public void runPerimeter() {
         // To do
