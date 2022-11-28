@@ -25,7 +25,7 @@ public class SixDataProvider extends BaseDataProvider {
     @DataProvider(name = "Rainfall -> variance")
     public Object[][] variance() {
         Object[][] testData = new Object[][]{
-                {"London", 57.42833333333374},
+                {"London", 57.42833333333334},
                 {"Beijing", 4808.37138888889}
         };
         return combineImplWithTests(SIX_IMPL, testData);
