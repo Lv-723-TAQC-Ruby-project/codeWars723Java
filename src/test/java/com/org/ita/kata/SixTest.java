@@ -6,13 +6,13 @@ import org.testng.annotations.Test;
 public class SixTest extends SixDataProvider{
 
     @Test(dataProvider = "Rainfall -> mean")
-    public void meanTest(Six impl, String data, String towns, double expected) {
-        double actual = impl.mean(towns, data);
+    public void meanTest(Six impl, String testData, double expected) {
+        double actual = impl.mean(testData,data);
         Assert.assertEquals(actual, expected);
     }
     @Test(dataProvider = "Rainfall -> variance")
-    public void varianceTest(Six impl, String data, String towns, double expected) {
-        double actual = impl.variance(towns, data);
+    public void varianceTest(Six impl, String testData, double expected) {
+        double actual = impl.variance(testData, data);
         Assert.assertEquals(actual, expected);
     }
 
