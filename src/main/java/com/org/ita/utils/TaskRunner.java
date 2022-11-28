@@ -98,7 +98,15 @@ public class TaskRunner {
         System.out.println("Result - " + result + " hours.");
     }
     public void runGetVolumeOfCuboid() {
-        // To do
+        System.out.println("Run task Volume of Cuboid");
+        System.out.println("Please, input the length: ");
+        double length = reader.readDouble();
+        System.out.println("Please, input the width: ");
+        double width = reader.readDouble();
+        System.out.println("Please, input the height: ");
+        double height = reader.readDouble();
+        double result = user.getEight().getVolumeOfCuboid(length, width, height);
+        System.out.println("The volume of cuboid is: " + result);
     }
     public void runMpgToKPM() {
         System.out.println("Run task Miles per gallon to kilometers per liter\n");
@@ -133,7 +141,11 @@ public class TaskRunner {
         // To do
     }
     public void runSeriesSum() {
-        // To do
+        System.out.println("Run task Sum of the first nth term of Series");
+        System.out.println("Please input the integer number: ");
+        int n = reader.readInteger();
+        String result = user.getSeven().seriesSum(n);
+        System.out.println("The sum of following series is: " + result);
     }
     public void runWhereIsHe() {
         System.out.println("Run task Where is Vasya?\n");
@@ -183,7 +195,15 @@ public class TaskRunner {
         // To do
     }
     public void runGap() {
-        // To do
+        System.out.println("Run task Gap in Primes");
+        System.out.println("Please, input the integer number of the gap we are looking for: ");
+        int g = reader.readInteger();
+        System.out.println("Please, input the start of the search: ");
+        long m = reader.readLong();
+        System.out.println("Please, input the end of the search: ");
+        long n = reader.readLong();
+        long [] result = user.getFive().gap(g, m, n);
+        System.out.println("The first pair of two prime numbers is: " + result);
     }
     public void runZeros() {
         System.out.println("Run task am Number of trailing zeros of N!");

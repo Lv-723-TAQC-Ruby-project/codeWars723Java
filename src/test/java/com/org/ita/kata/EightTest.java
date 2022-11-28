@@ -12,7 +12,7 @@ public class EightTest extends EightDataProvider {
     }
 
     @Test(dataProvider = "Volume of a Cuboid")
-    public void getVolumeOfCuboid(Eight impl, double length, double width, double height, int expected) {
+    public void getVolumeOfCuboid(Eight impl, double length, double width, double height, double expected) {
         double actual = impl.getVolumeOfCuboid(length, width, height);
         Assert.assertEquals(actual, expected);
     }
