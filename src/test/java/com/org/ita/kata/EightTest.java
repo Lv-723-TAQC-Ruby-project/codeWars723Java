@@ -22,7 +22,11 @@ public class EightTest extends EightDataProvider {
         boolean actual = impl.amIWilson(data);
         Assert.assertEquals(actual, expected);
     }
-
+    @Test(dataProvider = "twoDecimalPlaces")
+    public void twoDecimalPlaces(Eight impl, double data, double expected) {
+        double actual = impl.twoDecimalPlaces(data);
+        Assert.assertEquals(actual, expected);
+    }
     @Test(dataProvider = "squareOrSquareRoot" )
     public void squareOrSquareRoot(Eight impl, int [] data, int[] expected){
         int [] actual = impl.squareOrSquareRoot(data);

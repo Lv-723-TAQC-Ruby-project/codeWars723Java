@@ -48,6 +48,15 @@ public class EightDataProvider extends BaseDataProvider {
         return combineImplWithTests(EIGHTS_IMPL, testData);
     }
 
+    @DataProvider(name = "twoDecimalPlaces")
+    public Object[][] twoDecimalPlaces() {
+        Object[][] testData = new Object[][]{
+                {4.659725356, 4.66},
+                {173735326.3783732637948948, 173735326.38},
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
 
     @DataProvider(name = "squareOrSquareRoot")
     public Object[][] squareOrSquareRoot() {
