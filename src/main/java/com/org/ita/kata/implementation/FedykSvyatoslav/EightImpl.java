@@ -50,7 +50,7 @@ public class EightImpl extends BaseKata implements Eight {
 
     @Override
     public double twoDecimalPlaces(double number) {
-        return Double.parseDouble(String.format("%.2f", number));
+        return Math.round(number * 100.0) / 100.0;
     }
 
     @Override

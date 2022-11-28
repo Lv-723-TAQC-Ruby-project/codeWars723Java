@@ -23,7 +23,7 @@ public class EightTest extends EightDataProvider {
         Assert.assertEquals(actual, expected);
     }
     @Test(dataProvider = "twoDecimalPlaces")
-    public void twoDecimalPlaces(Eight impl, double data, double expected) {
+    public void twoDecimalPlacesTest(Eight impl, double data, double expected) {
         double actual = impl.twoDecimalPlaces(data);
         Assert.assertEquals(actual, expected);
     }
@@ -41,6 +41,12 @@ public class EightTest extends EightDataProvider {
     @Test(dataProvider = "dataMpgToKPM")
     public void mpgToKPM(Eight impl, float mpg, float expected) {
         float actual = impl.mpgToKPM(mpg);
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test(dataProvider = "dataCountPositivesSumNegatives")
+    public void countPositivesSumNegatives(Eight impl, int[] input, int[] expected) {
+        int[] actual = impl.countPositivesSumNegatives(input);
         Assert.assertEquals(actual, expected);
     }
 }

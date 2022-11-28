@@ -17,4 +17,10 @@ public class FiveTest extends FiveDataProvider {
         int actual = impl.zeros(n);
         Assert.assertEquals(actual, expected);
     }
+
+    @Test(dataProvider = "dataSolveSum")
+    public void solveSumTest(Five impl, double m, double expected) {
+        double actual = impl.solveSum(m);
+        Assert.assertEquals(actual, expected);
+    }
 }
