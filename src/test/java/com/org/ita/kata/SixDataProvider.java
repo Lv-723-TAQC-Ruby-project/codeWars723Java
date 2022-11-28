@@ -2,7 +2,7 @@ package com.org.ita.kata;
 
 import org.testng.annotations.DataProvider;
 
-public class SixDataProvider extends BaseDataProvider{
+public class SixDataProvider extends BaseDataProvider {
     @DataProvider(name = "Rainfall -> mean")
     public Object[][] meanRainfallData() {
         Object[][] testData = new Object[][]{
@@ -11,6 +11,7 @@ public class SixDataProvider extends BaseDataProvider{
         };
         return combineImplWithTests(SIX_IMPL, testData);
     }
+
     @DataProvider(name = "Rainfall -> variance")
     public Object[][] varianceRainfallData() {
         Object[][] testData = new Object[][]{
@@ -19,7 +20,7 @@ public class SixDataProvider extends BaseDataProvider{
         };
         return combineImplWithTests(SIX_IMPL, testData);
     }
-<<<<<<< HEAD
+
     String resultSheet1 = "Los Angeles Clippers 104 Dallas Mavericks 88,New York Knicks 101 Atlanta Hawks 112,Indiana Pacers 103 Memphis Grizzlies 112,"
             + "Los Angeles Lakers 111 Minnesota Timberwolves 112,Phoenix Suns 95 Dallas Mavericks 111,Portland Trail Blazers 112 New Orleans Pelicans 94,"
             + "Sacramento Kings 104 Los Angeles Clippers 111,Houston Rockets 85 Denver Nuggets 105,Memphis Grizzlies 76 Cleveland Cavaliers 106,"
@@ -37,12 +38,15 @@ public class SixDataProvider extends BaseDataProvider{
             + "Chicago Bulls 103 Indiana Pacers 94,Milwaukee Bucks 106 Minnesota Timberwolves 88,Los Angeles Lakers 104 Portland Trail Blazers 102,"
             + "Houston Rockets 120 New Orleans Pelicans 100,Boston Celtics 111 Brooklyn Nets 105,Charlotte Hornets 94 Chicago Bulls 86,Cleveland Cavaliers 103 Dallas Mavericks 97";
     String resultSheet3 = resultSheet1 + resultSheet2;
+
     @DataProvider(name = "nbaCup")
     public Object[][] nbaCup() {
-        Object[][] testData = new Object[][]{
-                {"Boston Celtics","Boston Celtics:W=4;D=0;L=0;Scored=403;Conceded=350;Points=12"},
-                {"Boston Celt","Boston Celt:This team didn't play!"}
-=======
+        Object[][] nbaData = new Object[][]{
+                {"Boston Celtics", "Boston Celtics:W=4;D=0;L=0;Scored=403;Conceded=350;Points=12"},
+                {"Boston Celt", "Boston Celt:This team didn't play!"}
+        };
+        return combineImplWithTests(SIX_IMPL, nbaData);
+    }
 
     @DataProvider(name = "dataBalanceCheck")
     public Object[][] balanceData() {
@@ -54,9 +58,9 @@ public class SixDataProvider extends BaseDataProvider{
         String b2sol = "Original Balance: 1233.00\\r\\n125 Hardware 24.80 Balance 1208.20\\r\\n123 Flowers 93.50 Balance 1114.70\\r\\n127 Meat 120.90 Balance 993.80\\r\\n120 Picture 34.00 Balance 959.80\\r\\n124 Gasoline 11.00 Balance 948.80\\r\\n123 Photos 71.40 Balance 877.40\\r\\n122 Picture 93.50 Balance 783.90\\r\\n132 Tyres 19.00 Balance 764.90\\r\\n129 Stamps 13.60 Balance 751.30\\r\\n129 Fruits 17.60 Balance 733.70\\r\\n129 Market 128.00 Balance 605.70\\r\\n121 Gasoline 13.60 Balance 592.10\\r\\nTotal expense  640.90\\r\\nAverage expense  53.41";
 
         Object[][] testData = new Object[][]{
-                {b1,b1sol},
-                {b2,b2sol}
->>>>>>> ebe75a2a70bafed249171ebae612d43bfae50c06
+                {b1, b1sol},
+                {b2, b2sol}
+
         };
         return combineImplWithTests(SIX_IMPL, testData);
     }
