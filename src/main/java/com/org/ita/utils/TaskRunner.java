@@ -136,7 +136,15 @@ public class TaskRunner {
         // To do
     }
     public void runWhereIsHe() {
-        // To do
+        System.out.println("Run task Where is Vasya?\n");
+        System.out.println("Please, input integers: 1. total amount of people in the line;\n");
+        int p = reader.readInteger();
+        System.out.println("2. number of people standing in front of him\n");
+        int bef = reader.readInteger();
+        System.out.println("3. number of people standing behind him");
+        int aft = reader.readInteger();
+        int result = user.getSeven().whereIsHe(p,bef,aft);
+        System.out.println("Vasya's position  -> " + result);
     }
     public void runFindNb() {
         // To do

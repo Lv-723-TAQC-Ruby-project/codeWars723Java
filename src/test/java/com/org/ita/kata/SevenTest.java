@@ -10,5 +10,10 @@ public class SevenTest extends SevenDataProvider {
         String actual = impl.seriesSum(number);
         Assert.assertEquals(actual, expected);
     }
+    @Test(dataProvider = "dataWhereIsHe")
+    public void whereIsHe(Seven impl, int p, int bef, int aft, int expected) {
+        int actual = impl.whereIsHe(p, bef, aft);
+        Assert.assertEquals(actual, expected);
+    }
 
 }
