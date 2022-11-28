@@ -15,5 +15,9 @@ public class SixTest extends SixDataProvider{
         double actual = impl.variance(towns, data);
         Assert.assertEquals(actual, expected);
     }
-
+    @Test(dataProvider = "nbaCup")
+    public void nbaCup(Six impl,String testData, String expected) {
+        String actual = impl.nbaCup(resultSheet3,testData);
+        Assert.assertEquals(actual,expected);
+    }
 }
