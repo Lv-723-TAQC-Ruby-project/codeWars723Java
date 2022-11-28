@@ -19,4 +19,15 @@ public class SixDataProvider extends BaseDataProvider{
         };
         return combineImplWithTests(SIX_IMPL, testData);
     }
+
+    @DataProvider(name = "Build a pile of Cubes")
+    public Object[][] findNbData(){
+        Object[][] testData = new Object[][]{
+                {4183059834009L,2022 },
+                {24723578342962L,-1},
+                {135440716410000L,4824},
+                {40539911473216L, 3568}
+        };
+        return combineImplWithTests(SIX_IMPL, testData);
+    }
 }

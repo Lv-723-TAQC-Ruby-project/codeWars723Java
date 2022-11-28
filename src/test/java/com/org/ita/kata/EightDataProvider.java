@@ -49,8 +49,8 @@ public class EightDataProvider extends BaseDataProvider {
     }
 
 
-    @DataProvider(name = "squareOrSquareRoot")
-    public Object[][] squareOrSquareRoot() {
+    @DataProvider(name = "dataSquareOrSquareRoot")
+    public Object[][] squareOrSquareRootTest() {
         int[][][] testData = new int[][][]{
                 {{4, 3, 9, 7, 2, 1}, {2, 9, 3, 49, 4, 1}},
                 {{100, 101, 5, 5, 1, 1}, {10, 10201, 25, 25, 1, 1}},

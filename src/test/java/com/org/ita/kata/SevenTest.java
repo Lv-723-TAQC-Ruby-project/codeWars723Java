@@ -11,4 +11,5 @@ public class SevenTest extends SevenDataProvider {
         Assert.assertEquals(actual, expected);
     }
 
+
 }

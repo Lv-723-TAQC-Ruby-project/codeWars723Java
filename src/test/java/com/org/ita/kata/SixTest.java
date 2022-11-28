@@ -16,4 +16,11 @@ public class SixTest extends SixDataProvider{
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(dataProvider = "Build a pile of Cubes")
+    public void findNbTest (Six impl, long data, long expected ){
+        long actual = impl.findNb(data);
+        Assert.assertEquals(actual, expected);
+    }
+
+
 }
