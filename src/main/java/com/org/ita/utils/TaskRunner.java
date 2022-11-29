@@ -1,5 +1,7 @@
 package com.org.ita.utils;
 
+import java.util.Arrays;
+
 public class TaskRunner {
     private Users user = Users.BRYL_ANDRII;
     private final ConsoleReader reader = new ConsoleReader();
@@ -139,7 +141,13 @@ public class TaskRunner {
         System.out.println("You number is rounded to two decimal places -> " + result);
     }
     public void runDivisibleBy() {
-        // To do
+        System.out.println("Run task 'Find numbers which are divisible by given number'");
+        System.out.println("Please, input numbers");
+        int[] numbers = reader.readIntArr();
+        System.out.println("Please, input divisor");
+        int divisor = reader.readInteger();
+        int[] result = user.getEight().divisibleBy(numbers, divisor);
+        System.out.println("Result: " + Arrays.toString(result));
     }
     public void runNewAvg() {
         // To do
@@ -199,7 +207,15 @@ public class TaskRunner {
         System.out.println(" " + result);
     }
     public void runStockSummary() {
-        // To do
+        System.out.println("Run task 'Help the bookseller'");
+        String[] stocklist = {"ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"};
+        System.out.println("Stocklist:");
+        System.out.println(Arrays.toString(stocklist));
+        System.out.println("Please input list of categories");
+        String[] categories = reader.readStringArr();
+        String result = user.getSix().stockSummary(stocklist, categories);
+        System.out.println("Result: " + result);
+
     }
     public void runArtificialRain() {
         // To do
