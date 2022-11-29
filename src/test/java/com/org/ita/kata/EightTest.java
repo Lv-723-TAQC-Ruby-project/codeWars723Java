@@ -12,7 +12,7 @@ public class EightTest extends EightDataProvider {
     }
 
     @Test(dataProvider = "Volume of a Cuboid")
-    public void getVolumeOfCuboid(Eight impl, double length, double width, double height, int expected) {
+    public void getVolumeOfCuboid(Eight impl, double length, double width, double height, double expected) {
         double actual = impl.getVolumeOfCuboid(length, width, height);
         Assert.assertEquals(actual, expected);
     }
@@ -22,12 +22,11 @@ public class EightTest extends EightDataProvider {
         boolean actual = impl.amIWilson(data);
         Assert.assertEquals(actual, expected);
     }
-<<<<<<< HEAD
 
 
     @Test(dataProvider = "dataSquareOrSquareRoot" )
     public void squareOrSquareRootTest(Eight impl, int [] data, int[] expected){
-=======
+
     @Test(dataProvider = "twoDecimalPlaces")
     public void twoDecimalPlacesTest(Eight impl, double data, double expected) {
         double actual = impl.twoDecimalPlaces(data);
@@ -35,7 +34,6 @@ public class EightTest extends EightDataProvider {
     }
     @Test(dataProvider = "squareOrSquareRoot" )
     public void squareOrSquareRoot(Eight impl, int [] data, int[] expected){
->>>>>>> ebe75a2a70bafed249171ebae612d43bfae50c06
         int [] actual = impl.squareOrSquareRoot(data);
         Assert.assertEquals(actual, expected);
     }
