@@ -6,14 +6,14 @@ import com.org.ita.kata.Seven;
 public class SevenImpl extends BaseKata implements Seven {
     @Override
     public long newAvg(double[] arr, double navg) {
-        double sum_of_array = 0;
+        double sumOfArray = 0;
         for (double v : arr) {
-            sum_of_array += v;
+            sumOfArray += v;
         }
-        double expected_donation = navg * (arr.length + 1) - sum_of_array;
+        double expectedDonation = navg * (arr.length + 1) - sumOfArray;
 
-        if (expected_donation > 0) {
-            return (long) Math.ceil(expected_donation);
+        if (expectedDonation > 0) {
+            return (long) Math.ceil(expectedDonation);
         } else {
             throw new IllegalArgumentException();
         }

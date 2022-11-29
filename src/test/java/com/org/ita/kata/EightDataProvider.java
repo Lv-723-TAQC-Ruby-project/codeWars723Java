@@ -48,9 +48,18 @@ public class EightDataProvider extends BaseDataProvider {
         return combineImplWithTests(EIGHTS_IMPL, testData);
     }
 
+    @DataProvider(name = "twoDecimalPlaces")
+    public Object[][] twoDecimalPlaces() {
+        Object[][] testData = new Object[][]{
+                {4.659725356, 4.66},
+                {173735326.3783732637948948, 173735326.38},
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
 
-    @DataProvider(name = "squareOrSquareRoot")
-    public Object[][] squareOrSquareRoot() {
+
+    @DataProvider(name = "dataSquareOrSquareRoot")
+    public Object[][] squareOrSquareRootTest() {
         int[][][] testData = new int[][][]{
                 {{4, 3, 9, 7, 2, 1}, {2, 9, 3, 49, 4, 1}},
                 {{100, 101, 5, 5, 1, 1}, {10, 10201, 25, 25, 1, 1}},
@@ -67,6 +76,38 @@ public class EightDataProvider extends BaseDataProvider {
                 {"-5", -5}
         };
         return combineImplWithTests(EIGHTS_IMPL, test);
+    }
+
+
+    @DataProvider(name = "dataMpgToKPM")
+    public Object[][] mpgToKPM() {
+        Object[][] testData = new Object[][]{
+                {10, 3.54f},
+                {20, 7.08f},
+                {30, 10.62f},
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
+    @DataProvider(name = "dataCountPositivesSumNegatives")
+    public Object[][] countPositivesSumNegatives() {
+        Object[][] testData = new Object[][]{
+                {new int[] {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15},new int[]{10, -65}},
+                {new int[] {0, 2, 3, 0, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14},new int[] {8, -50}}
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
+    @DataProvider(name = "dataDivisibleBy")
+    public Object[][] divisibleByData() {
+        Object[][] testData = new Object[][]{
+                {new int[] {1, 2, 3, 4, 5, 6}, 2, new int[] {2, 4, 6}},
+                {new int[] {1, 2, 3, 4, 5, 6}, 3, new int[] {3, 6}},
+                {new int[] {0, 1, 2, 3, 4, 5, 6}, 4, new int[] {0, 4}},
+                {new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 1, new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}},
+                {new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 17, new int[] {0}}
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
     }
 
 }

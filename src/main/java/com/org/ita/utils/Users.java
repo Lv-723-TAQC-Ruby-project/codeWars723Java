@@ -45,7 +45,12 @@ public enum Users {
             new com.org.ita.kata.implementation.StanislavKovalov.EightImpl(),
             new com.org.ita.kata.implementation.StanislavKovalov.SevenImpl(),
             new com.org.ita.kata.implementation.StanislavKovalov.SixImpl(),
-            new com.org.ita.kata.implementation.StanislavKovalov.FiveImpl());
+            new com.org.ita.kata.implementation.StanislavKovalov.FiveImpl()),
+    LYPSKYI_OLEKSANDR(8, "Lypskyi Oleksandr", "simpleUA",
+            new com.org.ita.kata.implementation.LypskyiOleksandr.EightImpl(),
+            new com.org.ita.kata.implementation.LypskyiOleksandr.SevenImpl(),
+            new com.org.ita.kata.implementation.LypskyiOleksandr.SixImpl(),
+            new com.org.ita.kata.implementation.LypskyiOleksandr.FiveImpl());
 
     private final int id;
     private final String name;

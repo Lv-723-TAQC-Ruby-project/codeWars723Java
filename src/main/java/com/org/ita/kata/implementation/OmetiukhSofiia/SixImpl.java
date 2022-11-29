@@ -5,7 +5,10 @@ import com.org.ita.kata.Six;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.stream.Collectors;
+import java.util.stream.Stream;
 
+import static java.util.List.of;
 import static java.util.stream.Collectors.averagingDouble;
 
 public class SixImpl extends BaseKata implements Six {
@@ -38,7 +41,23 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public String balance(String book) {
-        return null;
+        String s = book.replaceAll("([^\\n. \\da-zA-Z])", "");
+        String[] arr = s.split("[\\n]+");
+        double curr = Double.parseDouble(arr[0]);
+        double total = 0;
+        int count = 0;
+        StringBuilder result = new StringBuilder();
+        result.append("Balance: " + arr[0]);
+        for (int i = 1; i < arr.length; i++) {
+            count++;
+            String[] l = arr[i].split("[ ]+");
+            curr -= Double.parseDouble(l[2]);
+            total += Double.parseDouble(l[2]);
+            String r = String.format("\\r\\n%s %s %s Balance %.2f", l[0], l[1], l[2], curr);
+            result.append(r);
+        }
+        result.append(String.format("\\r\\nTotal expense  %.2f\\r\\nAverage expense  %.2f", total, total / count));
+        return result.toString();
     }
 
     @Override
@@ -65,11 +84,50 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public String nbaCup(String resultSheet, String toFind) {
-        return null;
+        if (toFind.isEmpty()) {
+            return "";
+        }
+        int wins = 0, losses = 0, draws = 0, scored = 0, conceded = 0;
+        for (var match : of(resultSheet.split(",")).stream().filter(s -> s.contains(toFind)).toArray(String[]::new)) {
+            if (match.contains(".")) {
+                return "Error(float number):" + match;
+            }
+            var teams = match.substring(0, match.lastIndexOf(' ')).replaceAll(" \\d+ ", "@").split("@");
+            if (teams[0].equals(toFind) || teams[1].equals(toFind)) {
+
+                int pointsA = Integer.parseInt(match.substring(match.lastIndexOf(' ') + 1));
+                int pointsB = Integer.parseInt(match.substring(teams[0].length() + 1, match.indexOf(teams[1]) - 1));
+                if (match.startsWith(toFind)) {
+                    int temp = pointsA;
+                    pointsA = pointsB;
+                    pointsB = temp;
+                }
+                scored += pointsA;
+                conceded += pointsB;
+
+                if (pointsA > pointsB) {
+                    wins++;
+                } else if (pointsA < pointsB) {
+                    losses++;
+                } else {
+                    draws++;
+                }
+            }
+        }
+        return toFind + (scored + conceded > 0 ? ":W=" + wins + ";D=" + draws + ";L=" + losses + ";Scored=" + scored + ";Conceded=" + conceded + ";Points=" + (3 * wins + draws) : ":This team didn't play!");
     }
 
     @Override
     public String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
-        return null;
+        if (lstOfArt.length == 0) return "";
+        final int space = lstOfArt[0].indexOf(" ");
+        return Stream.of(lstOf1stLetter)
+                .map(c -> c + " : " + Stream.of(lstOfArt)
+                        .filter(a -> c.contentEquals(a.subSequence(0, 1)))
+                .map(x->x.substring(space +1))
+                .mapToInt(Integer::parseInt)
+                .sum())
+                .map(s->"(" + s + ")")
+                .collect(Collectors.joining(" - "));
     }
 }

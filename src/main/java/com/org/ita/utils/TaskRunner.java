@@ -98,10 +98,22 @@ public class TaskRunner {
         System.out.println("Result - " + result + " hours.");
     }
     public void runGetVolumeOfCuboid() {
-        // To do
+        System.out.println("Run task Volume of Cuboid");
+        System.out.println("Please, input the length: ");
+        double length = reader.readDouble();
+        System.out.println("Please, input the width: ");
+        double width = reader.readDouble();
+        System.out.println("Please, input the height: ");
+        double height = reader.readDouble();
+        double result = user.getEight().getVolumeOfCuboid(length, width, height);
+        System.out.println("The volume of cuboid is: " + result);
     }
     public void runMpgToKPM() {
-        // To do
+        System.out.println("Run task Miles per gallon to kilometers per liter\n");
+        System.out.println("Please, input float to check: ");
+        float number = reader.readFloat();
+        float result = user.getEight().mpgToKPM(number);
+        System.out.println("The result of converting -> " + result);
     }
     public void runSquareOrSquareRoot() {
         // To do
@@ -120,7 +132,11 @@ public class TaskRunner {
         System.out.println("Is this number wilson number? -> " + result);
     }
     public void runTwoDecimalPlaces() {
-        // To do
+        System.out.println("Run task two decimal places");
+        System.out.println("Please, input number to round: ");
+        double number = reader.readDouble();
+        double result = user.getEight().twoDecimalPlaces(number);
+        System.out.println("You number is rounded to two decimal places -> " + result);
     }
     public void runDivisibleBy() {
         // To do
@@ -129,10 +145,22 @@ public class TaskRunner {
         // To do
     }
     public void runSeriesSum() {
-        // To do
+        System.out.println("Run task Sum of the first nth term of Series");
+        System.out.println("Please input the integer number: ");
+        int n = reader.readInteger();
+        String result = user.getSeven().seriesSum(n);
+        System.out.println("The sum of following series is: " + result);
     }
     public void runWhereIsHe() {
-        // To do
+        System.out.println("Run task Where is Vasya?\n");
+        System.out.println("Please, input integers: 1. total amount of people in the line;\n");
+        int p = reader.readInteger();
+        System.out.println("2. number of people standing in front of him\n");
+        int bef = reader.readInteger();
+        System.out.println("3. number of people standing behind him");
+        int aft = reader.readInteger();
+        int result = user.getSeven().whereIsHe(p,bef,aft);
+        System.out.println("Vasya's position  -> " + result);
     }
     public void runFindNb() {
         // To do
@@ -162,7 +190,13 @@ public class TaskRunner {
         System.out.println("Result is: " + result);
     }
     public void runNbaCup() {
-        // To do
+        System.out.println("Run task Ranking NBA:");
+        System.out.println("Please, enter team's name to see the scores: ");
+        String toFind = reader.readString();
+        System.out.println("Please, enter scores: ");
+        String resultSheet = reader.readString();
+        String result = user.getSix().nbaCup(resultSheet,toFind);
+        System.out.println(" " + result);
     }
     public void runStockSummary() {
         // To do
@@ -171,10 +205,22 @@ public class TaskRunner {
         // To do
     }
     public void runGap() {
-        // To do
+        System.out.println("Run task Gap in Primes");
+        System.out.println("Please, input the integer number of the gap we are looking for: ");
+        int g = reader.readInteger();
+        System.out.println("Please, input the start of the search: ");
+        long m = reader.readLong();
+        System.out.println("Please, input the end of the search: ");
+        long n = reader.readLong();
+        long [] result = user.getFive().gap(g, m, n);
+        System.out.println("The first pair of two prime numbers is: " + result);
     }
     public void runZeros() {
-        // To do
+        System.out.println("Run task am Number of trailing zeros of N!");
+        System.out.println("Please, input number to check of trailing zeros: ");
+        int number = reader.readInteger();
+        int result = user.getFive().zeros(number);
+        System.out.println("The number of trailing zeros in a factorial of a given number is -> " + result);
     }
     public void runPerimeter() {
         // To do

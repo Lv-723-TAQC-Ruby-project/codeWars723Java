@@ -6,16 +6,28 @@ import com.org.ita.kata.Seven;
 public class SevenImpl extends BaseKata implements Seven {
     @Override
     public long newAvg(double[] arr, double navg) {
-        return 0;
+        int n = arr.length + 1;
+        double mul = n * navg;
+
+        double sum = 0;
+        for (double d : arr) sum += d;
+
+        if (sum >= mul) throw new IllegalArgumentException();
+
+        return (long) Math.ceil(mul - sum);
     }
 
     @Override
     public String seriesSum(int n) {
-        return null;
+        double sum = 0;
+        for (int i = 1; i < n*3; i+=3) {
+            sum += 1.0/i;
+        }
+        return String.format("%.2f", sum);
     }
 
     @Override
     public int whereIsHe(int p, int bef, int aft) {
-        return 0;
+        return Math.min(p - bef, ++aft);
     }
 }
