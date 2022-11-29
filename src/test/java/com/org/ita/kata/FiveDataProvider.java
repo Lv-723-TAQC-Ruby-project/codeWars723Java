@@ -47,5 +47,15 @@ public class FiveDataProvider extends BaseDataProvider{
         };
         return combineImplWithTests(FIVE_IMPL,testData);
     }
-
+    @DataProvider(name ="Find the smallest")
+    public Object [][] smallestData() {
+        Object[][] data = new Object[][] {
+                {261235, new long[]{126235, 2, 0}},
+                {209917, new long[]{29917, 0, 1}},
+                {285365, new long[]{238565, 3, 1}},
+                {269045, new long[]{26945, 3, 0}},
+                {296837, new long[]{239687, 4, 1}}
+        };
+        return combineImplWithTests(FIVE_IMPL,data);
+    }
 }
