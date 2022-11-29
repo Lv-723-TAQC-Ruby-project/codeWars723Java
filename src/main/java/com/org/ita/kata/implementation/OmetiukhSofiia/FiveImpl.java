@@ -10,6 +10,9 @@ import static java.math.BigInteger.ONE;
 import static java.math.BigInteger.ZERO;
 
 public class FiveImpl extends BaseKata implements Five {
+    private static int sPosition;
+    private static int replacedPosition = 0;
+
     @Override
     public int artificialRain(int[] v) {
         return 0;
@@ -66,7 +69,23 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public long[] smallest(long n) {
+    String s = String.valueOf(n);
+    String smallest = s;
 
-        return new long[0];
+    for (int i = 0; i<s.length(); i++){
+        char current = s.charAt(i);
+        for (int k = 0; k<s.length();k++){
+            StringBuilder stringBuilder = new StringBuilder(s);
+            stringBuilder.deleteCharAt(i);
+            stringBuilder.insert(k, current);
+            String newValue = stringBuilder.toString();
+            if(Long.parseLong(newValue, 10) < Long.parseLong(smallest, 10)){
+                smallest = newValue;
+                sPosition = i;
+                replacedPosition = k;
+            }
+        }
+    }
+        return new long[]{Long.parseLong(smallest), sPosition, replacedPosition};
     }
 }

@@ -93,6 +93,20 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public long[] smallest(long n) {
-        return new long[0];
+        long lowestNumber = n;
+        long[] arrayToReturn = new long[]{};
+        String number = String.valueOf(n);
+        int length = number.length();
+        for (int i = 0; i < length; i++) {
+            String withOutI = number.substring(0, i) + number.substring(i + 1);
+            for (int j = 0; j < length; j++) {
+                long numberToCompare = Long.parseLong(withOutI.substring(0, j) + number.charAt(i) + withOutI.substring(j));
+                if (numberToCompare < lowestNumber) {
+                    lowestNumber = numberToCompare;
+                    arrayToReturn = new long[]{numberToCompare, i, j};
+                }
+            }
+        }
+        return arrayToReturn;
     }
 }
