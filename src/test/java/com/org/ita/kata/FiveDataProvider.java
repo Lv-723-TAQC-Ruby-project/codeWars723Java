@@ -2,6 +2,8 @@ package com.org.ita.kata;
 
 import org.testng.annotations.DataProvider;
 
+import java.math.BigInteger;
+
 public class FiveDataProvider extends BaseDataProvider{
 
     @DataProvider(name = "Gap in Primes")
@@ -34,6 +36,16 @@ public class FiveDataProvider extends BaseDataProvider{
                 {5.00, 6.417424305044e-01}
         };
         return combineImplWithTests(FIVE_IMPL, testData);
+    }
+
+    @DataProvider(name = "dataBigIntegerPerimeter")
+    public Object[][] perimeterData(){
+        BigInteger[][] testData = new BigInteger[][]{
+                {BigInteger.valueOf(5), BigInteger.valueOf(80)},
+                {BigInteger.valueOf(7), BigInteger.valueOf(216)},
+                {BigInteger.valueOf(30), BigInteger.valueOf(14098308)}
+        };
+        return combineImplWithTests(FIVE_IMPL,testData);
     }
 
 }

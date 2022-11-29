@@ -4,6 +4,8 @@ import com.org.ita.kata.implementation.OmetiukhSofiia.FiveImpl;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
+import java.math.BigInteger;
+
 public class FiveTest extends FiveDataProvider {
 
     @Test(dataProvider = "Gap in Primes")
@@ -23,4 +25,12 @@ public class FiveTest extends FiveDataProvider {
         double actual = impl.solveSum(m);
         Assert.assertEquals(actual, expected);
     }
+
+    @Test(dataProvider = "dataBigIntegerPerimeter")
+    public void BigIntegerPerimeterTest(Five impl, BigInteger data, BigInteger expected) {
+        BigInteger actual = impl.perimeter(data);
+        Assert.assertEquals(actual, expected);
+    }
+
+
 }
