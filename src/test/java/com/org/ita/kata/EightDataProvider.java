@@ -98,4 +98,16 @@ public class EightDataProvider extends BaseDataProvider {
         return combineImplWithTests(EIGHTS_IMPL, testData);
     }
 
+    @DataProvider(name = "dataDivisibleBy")
+    public Object[][] divisibleByData() {
+        Object[][] testData = new Object[][]{
+                {new int[] {1, 2, 3, 4, 5, 6}, 2, new int[] {2, 4, 6}},
+                {new int[] {1, 2, 3, 4, 5, 6}, 3, new int[] {3, 6}},
+                {new int[] {0, 1, 2, 3, 4, 5, 6}, 4, new int[] {0, 4}},
+                {new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 1, new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}},
+                {new int[] {0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10}, 17, new int[] {0}}
+        };
+        return combineImplWithTests(EIGHTS_IMPL, testData);
+    }
+
 }

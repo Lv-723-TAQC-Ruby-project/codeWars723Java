@@ -29,11 +29,16 @@ public class SixTest extends SixDataProvider{
     }
 
     @Test(dataProvider = "Build a pile of Cubes")
-    public void findNbTest (Six impl, long data, long expected ){
+    public void findNbTest (Six impl, long data, long expected) {
         long actual = impl.findNb(data);
         Assert.assertEquals(actual, expected);
     }
 
+    @Test(dataProvider = "dataStockSummary")
+    public void stockSummary(Six impl, String[] lstOfArt, String[] lstOf1stLetter, String expected) {
+        String actual = impl.stockSummary(lstOfArt, lstOf1stLetter);
+        Assert.assertEquals(actual, expected);
+    }
 
 
 }

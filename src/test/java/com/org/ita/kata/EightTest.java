@@ -1,5 +1,6 @@
 package com.org.ita.kata;
 
+import com.org.ita.kata.implementation.KhudoBohdan.EightImpl;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -52,6 +53,12 @@ public class EightTest extends EightDataProvider {
     @Test(dataProvider = "dataCountPositivesSumNegatives")
     public void countPositivesSumNegatives(Eight impl, int[] input, int[] expected) {
         int[] actual = impl.countPositivesSumNegatives(input);
+        Assert.assertEquals(actual, expected);
+    }
+
+    @Test(dataProvider = "dataDivisibleBy")
+    public void divisibleByTest(Eight impl, int[] numbers, int divider, int[] expected) {
+        int[] actual = impl.divisibleBy(numbers, divider);
         Assert.assertEquals(actual, expected);
     }
 
