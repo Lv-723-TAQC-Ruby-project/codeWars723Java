@@ -54,6 +54,7 @@ public class FiveImpl extends BaseKata implements Five {
                 for (long j = i + 1; j < i + g; j++) {
                     if (isPrime(j)) {
                         cleanGap = false;
+                        break;
                     }
                 }
                 if (cleanGap) {
