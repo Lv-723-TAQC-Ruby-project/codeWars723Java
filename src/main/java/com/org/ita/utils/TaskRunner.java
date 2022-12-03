@@ -134,7 +134,13 @@ public class TaskRunner {
         //To do
     }
     public void runStringToNumber() {
-        // To do
+        System.out.println("Run task convert a string to a number");
+        System.out.println("Please enter string that equals a number");
+        String string= reader.readString();
+        int result = user.getEight().stringToNumber(string);
+        System.out.println("------------------------------------");
+        System.out.println("The result of converting => " + result);
+        System.out.println("------------------------------------");
     }
     public void runAmIWilson() {
         System.out.println("Run task am I Wilson");
@@ -187,7 +193,13 @@ public class TaskRunner {
         // To do
     }
     public void runF() {
-        // To do
+        System.out.println("Run task Floating-point approximation");
+        System.out.println("Please enter a number (example: 2.6e-08) to check the conversion");
+        double data= reader.readDouble();
+        double result = user.getSix().f(data);
+        System.out.println("------------------------------------");
+        System.out.println("The result of converting => " + result);
+        System.out.println("------------------------------------");
     }
     public void runMean() {
         System.out.println("Run task Rainfall: mean (return average for city)");
@@ -252,6 +264,12 @@ public class TaskRunner {
         // To do
     }
     public void runSmallest() {
-        // To do
+        System.out.println("Run task find the smallest");
+        System.out.println("Please enter a number to check");
+        long data= reader.readLong();
+        long [] result = user.getFive().smallest(data);
+        System.out.println("------------------------------------");
+        System.out.println("The result  => " + Arrays.toString(result));
+        System.out.println("------------------------------------");
     }
 }
