@@ -21,7 +21,7 @@ public class EightImpl extends BaseKata implements Eight {
 
     @Override
     public float mpgToKPM(float mpg) {
-        return Float.parseFloat(String.format("%.2f", mpg * 1.609344 / 4.54609188));
+        return Float.parseFloat(String.format(Locale.US, "%.2f", mpg * 1.609344 / 4.54609188));
     }
 
     @Override
