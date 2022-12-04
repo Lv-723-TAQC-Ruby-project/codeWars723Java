@@ -1,6 +1,5 @@
 package com.org.ita.kata;
 
-import com.org.ita.kata.implementation.OmetiukhSofiia.FiveImpl;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
