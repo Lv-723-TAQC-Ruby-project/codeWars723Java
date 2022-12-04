@@ -8,7 +8,22 @@ import java.math.BigInteger;
 public class FiveImpl extends BaseKata implements Five {
     @Override
     public int artificialRain(int[] v) {
-        return 0;
+        int left = 0, area = 0, record = 1;
+        for(int i = 1; i < v.length; i++){
+            if(v[i] < v[i - 1]) left = i;
+            else if(v[i] > v[i-1]){
+                if(area > record)
+                    area = area;
+                else
+                    area = record;
+                record = i - left;
+            }
+            record++;
+        }
+        if(area>record)
+            return area;
+        else
+            return record;
     }
 
     @Override
@@ -31,7 +46,11 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public int zeros(int n) {
-        return 0;
+        int res = 0;
+        for (int i = 5; i <= n; i *= 5) {
+            res += n / i;
+        }
+        return res;
     }
 
     @Override
@@ -54,6 +73,24 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public long[] smallest(long n) {
-        return new long[0];
+        long smol = n;
+        long delPos = 0;
+        long insPos = 0;
+        long tmpVal = 0;
+
+        StringBuilder sb = new StringBuilder().append(n);
+        int l = sb.length();
+
+        for (int i = 0; i < l; i++) for (int j = 0; j < l; j++) {
+            char c = sb.charAt(i);
+            sb.deleteCharAt(i).insert(j, c);
+            if ((tmpVal = Long.parseLong(sb.toString())) < smol) {
+                smol = tmpVal;
+                delPos = i;
+                insPos = j;
+            }
+            sb.deleteCharAt(j).insert(i, c);
+        }
+        return new long[] {smol, delPos, insPos};
     }
 }

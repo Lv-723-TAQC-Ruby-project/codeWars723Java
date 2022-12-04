@@ -5,6 +5,8 @@ import static java.util.stream.Collectors.averagingDouble;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Locale;
+import java.util.stream.Stream;
+import java.util.stream.Collectors;
 
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
@@ -79,11 +81,76 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public String nbaCup(String resultSheet, String toFind) {
-        return null;
+        if (toFind.equals("")) return "";
+        String[] split = resultSheet.split(",");
+        int countstrLength = toFind.split(" ").length;
+        int noofMatches = 0, pointsob = 0, pointslos = 0, totalpointslos =0,totalpointsob=0,wincount =0, loscount =0,draws = 0, score=0;
+        for(String temp : split){
+            int index = temp.indexOf(toFind);
+            if(Character.isLetter(temp.charAt(index + toFind.length())))
+                index = -1;
+            if(index != -1){
+                boolean firstteam = false;
+                noofMatches++;
+                try {
+                    int cindex = index - 2;
+                    if(Character.isDigit(temp.charAt(cindex)))
+                        firstteam = false;
+                }
+                catch(Exception e){
+                    firstteam = true;
+                }
+                String[] innerSplit = temp.split(" ");
+                if(firstteam){
+                    try {pointsob = Integer.parseInt(innerSplit[countstrLength]);
+                        pointslos = Integer.parseInt(innerSplit[innerSplit.length - 1]);
+                        if(pointsob > pointslos)
+                            wincount++;
+                        else if (pointsob == pointslos)
+                            draws++;
+                        else
+                            loscount++;
+                        totalpointsob += pointsob;
+                        totalpointslos += pointslos;
+                        score = 3 * wincount + 1 * draws + 0 * loscount;}
+                    catch (NumberFormatException e) {
+                        return "Error(float number):" + temp;
+                    }
+                }
+                else {
+                    try{pointsob = Integer.parseInt(innerSplit[innerSplit.length -1]);
+                        pointslos = Integer.parseInt(innerSplit[innerSplit.length - 1 - countstrLength - 1]);
+                        if(pointsob > pointslos)
+                            wincount++;
+                        else if (pointsob == pointslos)
+                            draws++;
+                        else
+                            loscount++;
+                        totalpointsob += pointsob;
+                        totalpointslos += pointslos;
+                        score = 3 * wincount + 1 * draws + 0 * loscount;}
+                    catch (NumberFormatException e) {
+                        return "Error(float number):" + temp;
+                    }
+                }
+            }
+        }
+        if ( wincount ==0 && draws==0 && loscount ==0)
+            return (toFind+":This team didn't play!");
+        return (toFind+":"+"W="+wincount+";D="+draws+";L="+loscount+";Scored="+totalpointsob+";Conceded="+totalpointslos+";Points="+score);
     }
 
     @Override
     public String stockSummary(String[] lstOfArt, String[] lstOf1stLetter) {
-        return null;
+        if (lstOfArt.length == 0) return "";
+        final int space = lstOfArt[0].indexOf(" ");
+        return Stream.of(lstOf1stLetter)
+                .map(c -> c + " : " + Stream.of(lstOfArt)
+                        .filter(a -> c.contentEquals(a.subSequence(0, 1)))
+                        .map(a -> a.substring(space + 1))
+                        .mapToInt(Integer::parseInt)
+                        .sum())
+                .map(s -> "(" + s + ")")
+                .collect(Collectors.joining(" - "));
     }
 }
