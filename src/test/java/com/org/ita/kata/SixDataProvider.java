@@ -13,6 +13,7 @@ public class SixDataProvider extends BaseDataProvider {
             + "Tokyo:Jan 49.9,Feb 71.5,Mar 106.4,Apr 129.2,May 144.0,Jun 176.0,Jul 135.6,Aug 148.5,Sep 216.4,Oct 194.1,Nov 95.6,Dec 54.4\n"
             + "Beijing:Jan 3.9,Feb 4.7,Mar 8.2,Apr 18.4,May 33.0,Jun 78.1,Jul 224.3,Aug 170.0,Sep 58.4,Oct 18.0,Nov 9.3,Dec 2.7\n"
             + "Lima:Jan 1.2,Feb 0.9,Mar 0.7,Apr 0.4,May 0.6,Jun 1.8,Jul 4.4,Aug 3.1,Sep 3.3,Oct 1.7,Nov 0.5,Dec 0.7";
+
     @DataProvider(name = "Rainfall -> mean")
     public Object[][] mean() {
         Object[][] testData = new Object[][]{
@@ -33,7 +34,7 @@ public class SixDataProvider extends BaseDataProvider {
 
 
     @DataProvider(name = "Floating-point Approximation")
-    public Object [][] testFloatingPointApproximation() {
+    public Object[][] testFloatingPointApproximation() {
         Object[][] dataTest = new Object[][]{
                 {2.6e-08, 1.29999999155e-08},
                 {1.4e-09, 6.999999997549999e-10},
@@ -93,8 +94,8 @@ public class SixDataProvider extends BaseDataProvider {
 
         Object[][] testData = new Object[][]{
 
-                {b1,b1sol},
-                {b2,b2sol},
+                {b1, b1sol},
+                {b2, b2sol},
 
                 {b1, b1sol},
                 {b2, b2sol}
@@ -107,11 +108,11 @@ public class SixDataProvider extends BaseDataProvider {
     @DataProvider(name = "dataStockSummary")
     public Object[][] stockSummaryData() {
         Object[][] testData = new Object[][]{
-                {new String[] {"ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"}, new String[] {"A", "B"}, "(A : 200) - (B : 1140)"},
-                {new String[] {"BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"}, new String[] {"A", "B", "C", "D"}, "(A : 0) - (B : 1290) - (C : 515) - (D : 600)"},
-                {new String[] {"CBART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"}, new String[] {"A", "B", "C", "W"}, "(A : 0) - (B : 114) - (C : 70) - (W : 0)"},
-                {new String[] {"ROXANNE 102", "RHODODE 123", "BKWRKAA 125", "BTSQZFG 239", "DRTYMKH 060"}, new String[] {"B", "R", "D", "X"}, "(B : 364) - (R : 225) - (D : 60) - (X : 0)"},
-                {new String[] { }, new String[] {"A", "B"}, ""}
+                {new String[]{"ABAR 200", "CDXE 500", "BKWR 250", "BTSQ 890", "DRTY 600"}, new String[]{"A", "B"}, "(A : 200) - (B : 1140)"},
+                {new String[]{"BBAR 150", "CDXE 515", "BKWR 250", "BTSQ 890", "DRTY 600"}, new String[]{"A", "B", "C", "D"}, "(A : 0) - (B : 1290) - (C : 515) - (D : 600)"},
+                {new String[]{"CBART 20", "CDXEF 50", "BKWRK 25", "BTSQZ 89", "DRTYM 60"}, new String[]{"A", "B", "C", "W"}, "(A : 0) - (B : 114) - (C : 70) - (W : 0)"},
+                {new String[]{"ROXANNE 102", "RHODODE 123", "BKWRKAA 125", "BTSQZFG 239", "DRTYMKH 060"}, new String[]{"B", "R", "D", "X"}, "(B : 364) - (R : 225) - (D : 60) - (X : 0)"},
+                {new String[]{}, new String[]{"A", "B"}, ""}
         };
         return combineImplWithTests(SIX_IMPL, testData);
 

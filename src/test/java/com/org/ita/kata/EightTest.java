@@ -30,9 +30,10 @@ public class EightTest extends EightDataProvider {
         double actual = impl.twoDecimalPlaces(data);
         Assert.assertEquals(actual, expected);
     }
-    @Test(dataProvider = "squareOrSquareRoot" )
-    public void squareOrSquareRoot(Eight impl, int [] data, int[] expected){
-        int [] actual = impl.squareOrSquareRoot(data);
+
+    @Test(dataProvider = "squareOrSquareRoot")
+    public void squareOrSquareRoot(Eight impl, int[] data, int[] expected) {
+        int[] actual = impl.squareOrSquareRoot(data);
         Assert.assertEquals(actual, expected);
     }
 
@@ -41,7 +42,6 @@ public class EightTest extends EightDataProvider {
         int actual = impl.stringToNumber(data);
         Assert.assertEquals(actual, expected);
     }
-
 
 
     @Test(dataProvider = "dataMpgToKPM")

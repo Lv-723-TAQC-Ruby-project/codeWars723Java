@@ -90,7 +90,7 @@ public class FiveImpl extends BaseKata implements Five {
             char c = s.charAt(i);
             String str1 = s.substring(0, i) + s.substring(i+1, l);
             for (int j = 0; j < l; j++) {
-                String str2 = str1.substring(0, j) + c + str1.substring(j, str1.length());
+                String str2 = str1.substring(0, j) + c + str1.substring(j);
                 int cmp = str2.compareTo(tmp);
                 if (cmp < 0) {
                     tmp = str2;
