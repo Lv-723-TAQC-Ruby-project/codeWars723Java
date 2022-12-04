@@ -4,8 +4,6 @@ import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
 
 import java.util.*;
-import java.util.regex.MatchResult;
-import java.util.regex.Pattern;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
