@@ -15,9 +15,7 @@ public class EightDataProvider extends BaseDataProvider {
                 {11.8, 5},
                 {1787, 893},
                 {0, 0},
-                {5.5, 2},
-                {-500.00, 0},
-                {-1, 0}
+                {5.5, 2}
         };
         return combineImplWithTests(EIGHTS_IMPL, testData);
 

@@ -1,6 +1,5 @@
 package com.org.ita.kata;
 
-import com.org.ita.kata.implementation.OmetiukhSofiia.FiveImpl;
 import org.testng.Assert;
 import org.testng.annotations.Test;
 
@@ -31,11 +30,10 @@ public class FiveTest extends FiveDataProvider {
         double actual = impl.solveSum(m);
         double merr = 1e-12;
         boolean inrange = Math.abs(actual - expected) <= merr;
-        if (inrange == false)
-        {
-            System.out.println("Expected must be near " + expected +", got " + actual);
+        if (!inrange) {
+            System.out.println("Expected must be near " + expected + ", got " + actual);
         }
-        Assert.assertEquals(true, inrange);
+        Assert.assertTrue(inrange);
     }
 
     @Test(dataProvider = "dataBigIntegerPerimeter")
@@ -44,7 +42,7 @@ public class FiveTest extends FiveDataProvider {
         Assert.assertEquals(actual, expected);
     }
 
-    @Test(dataProvider = "Find the smallest")
+    @Test(dataProvider = "Find the smallest", timeOut = 5000)
     public void smallestTest(Five impl, long data, long[] expected) {
         long[] actual = impl.smallest(data);
         Assert.assertEquals(actual, expected);
