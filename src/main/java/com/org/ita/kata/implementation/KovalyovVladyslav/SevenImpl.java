@@ -19,11 +19,18 @@ public class SevenImpl extends BaseKata implements Seven {
 
     @Override
     public String seriesSum(int n) {
-        double sum = 0;
-        for (int i = 1; i < n*3; i+=3) {
-            sum += 1.0/i;
+        double start = 1.0;
+        double value = 0.0;
+        for (int i = 0; i <= n; i++) {
+            if (i == 0) {
+                System.out.println("0.00");
+            } else {
+                value += (1.0 / start);
+                start += 3.0;
+            }
         }
-        return String.format("%.2f", sum);
+        double result = Math.round(value * 100.0) / 100.0;
+        return String.valueOf(result);
     }
 
     @Override
