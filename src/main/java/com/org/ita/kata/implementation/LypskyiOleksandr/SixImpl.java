@@ -2,9 +2,6 @@ package com.org.ita.kata.implementation.LypskyiOleksandr;
 
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
-
-import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
@@ -89,10 +86,7 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public double f(double x) {
-        MathContext mc = new MathContext(30);
-        BigDecimal one = new BigDecimal(1);
-        BigDecimal result = (one.add(BigDecimal.valueOf(x))).sqrt(mc).subtract(one);
-        return result.doubleValue();
+        return x / (1 + Math.sqrt(x + 1));
     }
 
     @Override
