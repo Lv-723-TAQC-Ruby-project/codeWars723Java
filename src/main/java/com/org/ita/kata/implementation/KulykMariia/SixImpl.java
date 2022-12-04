@@ -26,28 +26,17 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public String balance(String book) {
-        String bookSorted = book.replaceAll("[^a-zA-Z ]", "");
-
-        double[] values = Pattern.compile("\\d+\\.\\d+").matcher(bookSorted).results()
-                .map(MatchResult::group)
-                .mapToDouble(Double::parseDouble)
-                .toArray();
-
-        String[] notes = bookSorted.split("\n");
-        List<String> res = new ArrayList<>();
-        res.add(String.format("Original Balance: %.2f", values[0]));
-
-        for (int i = 1; i < notes.length; i++) {
-            values[0] -= values[i];
-            res.add(String.format("%s Balance %.2f", notes[i].trim(), values[0]));
+        var lines = book.replaceAll("[^\\w\n. ]", "").split("\n");
+        var report = new StringBuilder("Original Balance: " + lines[0] + (book = "\\r\\n"));
+        double balance = Double.parseDouble(lines[0]), sum = 0;
+        for (int i = 1; i < lines.length; i++) {
+            sum += Double.parseDouble(lines[i].split("\\s+")[2]);
+            report
+                    .append(lines[i].trim().replaceAll("\\s+", " "))
+                    .append(String.format(" Balance %.2f", balance - sum))
+                    .append(book);
         }
-
-        DoubleSummaryStatistics dsm = Arrays.stream(values, 1, values.length)
-                .summaryStatistics();
-        res.add(String.format("Total expense  %.2f", dsm.getSum()));
-        res.add(String.format("Average expense  %.2f", dsm.getAverage()));
-
-        return String.join("\\r\\n", res);
+        return report + String.format("Total expense  %.2f%sAverage expense  %.2f", sum, book, sum / (lines.length - 1));
     }
 
     @Override
