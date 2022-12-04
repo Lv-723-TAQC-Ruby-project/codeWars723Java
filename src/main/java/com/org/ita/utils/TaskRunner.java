@@ -1,5 +1,6 @@
 package com.org.ita.utils;
 
+import java.math.BigInteger;
 import java.util.Arrays;
 
 public class TaskRunner {
@@ -131,7 +132,11 @@ public class TaskRunner {
         // To do
     }
     public void runCountPositivesSumNegatives() {
-        //To do
+        System.out.println("Run task to square root or no to square");
+        System.out.println("Please, input number to check:  ");
+        int[] i = reader.readIntArr();
+        int[] result = user.getEight().squareOrSquareRoot(i);
+        System.out.println("The result of operation  is: " + Arrays.toString(result));
     }
     public void runStringToNumber() {
         System.out.println("Run task convert a string to a number");
@@ -187,7 +192,11 @@ public class TaskRunner {
         System.out.println("Vasya's position  -> " + result);
     }
     public void runFindNb() {
-        // To do
+        System.out.println("Run task Build a pile of Cubes");
+        System.out.println("Please, input the long number for check: ");
+        long m = reader.readLong();
+        long result = user.getSix().findNb(m);
+        System.out.println("The  Building a pile of Cubes is: " + result);
     }
     public void runBalance() {
         // To do
@@ -258,7 +267,11 @@ public class TaskRunner {
         System.out.println("The number of trailing zeros in a factorial of a given number is -> " + result);
     }
     public void runPerimeter() {
-        // To do
+        System.out.println("Run task perimeter of squares in a rectangle");
+        System.out.println("Please, input number to check : ");
+        BigInteger n = reader.readBigInteger();
+        BigInteger result = user.getFive().perimeter(n);
+        System.out.println("The perimeter of squares in a rectangle is -> " + result);
     }
     public void runSolveSum() {
         // To do
