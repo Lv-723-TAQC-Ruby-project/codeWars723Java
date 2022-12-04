@@ -2,9 +2,6 @@ package com.org.ita.kata.implementation.LypskyiOleksandr;
 
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
-
-import java.math.BigDecimal;
-import java.math.MathContext;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
