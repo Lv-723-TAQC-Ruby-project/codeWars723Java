@@ -4,6 +4,7 @@ import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Eight;
 
 import java.util.ArrayList;
+import java.util.Locale;
 
 public class EightImpl extends BaseKata implements Eight {
     @Override
@@ -19,7 +20,7 @@ public class EightImpl extends BaseKata implements Eight {
     @Override
     public float mpgToKPM(float mpg) {
         double kpl = (mpg * 1.609344) / 4.54609188;
-        return Float.parseFloat(String.format("%.2f", kpl));
+        return Float.parseFloat(String.format(Locale.US,"%.2f", kpl));
     }
 
     @Override
