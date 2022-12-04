@@ -136,11 +136,7 @@ public class TaskRunner {
         System.out.println("The result of operation  is: " + Arrays.toString(result));
     }
     public void runCountPositivesSumNegatives() {
-        System.out.println("Run task to square root or no to square");
-        System.out.println("Please, input number to check:  ");
-        int[] i = reader.readIntArr();
-        int[] result = user.getEight().squareOrSquareRoot(i);
-        System.out.println("The result of operation  is: " + Arrays.toString(result));
+        // To do
     }
     public void runStringToNumber() {
         System.out.println("Run task convert a string to a number");
