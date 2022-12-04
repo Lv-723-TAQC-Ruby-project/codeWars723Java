@@ -33,7 +33,7 @@ public class SixImpl extends BaseKata implements Six {
                     .append(String.format(" Balance %.2f", balance - sum))
                     .append(book);
         }
-        return report + String.format("Total expense  %.2f%sAverage expense  %.2f", sum, book, sum / (lines.length - 1));
+        return report + String.format(Locale.US, "Total expense  %.2f%sAverage expense  %.2f", sum, book, sum / (lines.length - 1));
     }
 
     @Override

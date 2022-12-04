@@ -7,12 +7,10 @@ import java.util.Arrays;
 public class SevenImpl extends BaseKata implements Seven {
     @Override
     public long newAvg(double[] arr, double navg) {
-        double result = 0;
-        try {
-            result = (arr.length + 1) * navg - Arrays.stream(arr).sum();
-            return (long) result;
-        } catch (IllegalArgumentException e) {
-            System.out.println(e.getMessage());
+        double result;
+        result = (arr.length + 1) * navg - Arrays.stream(arr).sum();
+        if (result < 0) {
+            throw new IllegalArgumentException();
         }
         return (long) result;
     }
