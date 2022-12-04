@@ -7,6 +7,7 @@ import java.util.*;
 import java.util.stream.Collectors;
 import java.util.stream.DoubleStream;
 import java.util.stream.Stream;
+import static java.util.stream.Stream.of;
 
 public class SixImpl extends BaseKata implements Six {
     @Override
@@ -62,62 +63,40 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public String nbaCup(String resultSheet, String toFind) {
-        int wins = 0;
-        int draws = 0;
-        int lose = 0;
-        int scored = 0;
-        int conceded = 0;
-        int points = 0;
-
         if (toFind.isEmpty()) {
             return "";
         }
 
-        List<String> games = List.of(resultSheet.split(","));
-        for (String game: games) {
-            if (game.equals(".")) {
-                System.out.println("Error(float number): " + game);
+        int wins = 0, losses = 0, draws = 0, scored = 0, conceded = 0;
+        for (var match : of(resultSheet.split(",")).filter(s -> s.contains(toFind)).toArray(String[]::new)) {
+            if (match.contains(".")) {
+                return "Error(float number):" + match;
             }
-        }
 
-        List<String[]> teams = games.stream().map(game -> game.split("\\s\\d+(\\W|$)")).collect(Collectors.toList());
-        List<Integer[]> scores = games.stream()
-                .map(game -> Arrays.stream(game.split(" "))
-                        .filter(x -> x.matches("\\d+"))
-                        .map(Integer::valueOf).toArray(Integer[]::new))
-                .collect(Collectors.toList());
+            var teams = match.substring(0, match.lastIndexOf(' ')).replaceAll(" \\d+ ", "@").split("@");
+            if (teams[0].equals(toFind) || teams[1].equals(toFind)) {
 
-        for (int i = 0; i < teams.size(); i++) {
-            boolean draw = Objects.equals(scores.get(i)[0], scores.get(i)[1]);
-            boolean teamFirst = teams.get(i)[0].equals(toFind);
-            if (teamFirst) {
-                scored += scores.get(i)[0];
-                conceded += scores.get(i)[1];
-            } else {
-                scored += scores.get(i)[1];
-                conceded += scores.get(i)[0];
-            }
-            if (Objects.equals(scores.get(i)[0], scores.get(i)[1])) {
-                draws++;
-                points++;
-            } else if (scores.get(i)[0] < scores.get(i)[1]) {
-                if (teamFirst) {
-                    lose++;
-                } else {
-                    wins++;
-                    points += 3;
+                int pointsA = Integer.parseInt(match.substring(match.lastIndexOf(' ') + 1));
+                int pointsB = Integer.parseInt(match.substring(teams[0].length() + 1, match.indexOf(teams[1]) - 1));
+                if (match.startsWith(toFind)) {
+                    int temp = pointsA;
+                    pointsA = pointsB;
+                    pointsB = temp;
                 }
-            } else {
-                if (teamFirst) {
+
+                scored += pointsA;
+                conceded += pointsB;
+
+                if (pointsA > pointsB) {
                     wins++;
-                    points += 3;
+                } else if (pointsA < pointsB) {
+                    losses++;
                 } else {
-                    lose++;
+                    draws++;
                 }
             }
         }
-        return String.format(toFind + ":W=%s;D=%s;L=%s;Scored=%s;Conceded=%s;Points=%s",
-                wins, draws, lose, scored, conceded, points);
+        return toFind + (scored + conceded > 0 ? ":W=" + wins + ";D=" + draws + ";L=" + losses + ";Scored=" + scored + ";Conceded=" + conceded + ";Points=" + (3 * wins + draws) : ":This team didn't play!");
     }
 
     @Override
