@@ -44,11 +44,11 @@ public class FiveTest extends FiveDataProvider {
         Assert.assertEquals(actual, expected);
     }
 
-    //@Test(dataProvider = "Find the smallest")
-    //public void smallestTest(Five impl, long data, long[] expected) {
-    //    long[] actual = impl.smallest(data);
-    //    Assert.assertEquals(actual, expected);
-    //}
+    @Test(dataProvider = "Find the smallest")
+    public void smallestTest(Five impl, long data, long[] expected) {
+        long[] actual = impl.smallest(data);
+        Assert.assertEquals(actual, expected);
+    }
 
 
 }
