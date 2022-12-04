@@ -19,8 +19,8 @@ public class Main {
         while (run) {
             System.out.println("current user: " +taskRunner.getUser().getName() );
             System.out.println("0 exit;");
-            System.out.println("1 set user");
-            System.out.println("2 run task");
+            System.out.println("1 set user ");
+            System.out.println("2 run task ");
             int comandId = reader.readIntegerMinMax(0, 2);
             switch (comandId) {
                 case 0:

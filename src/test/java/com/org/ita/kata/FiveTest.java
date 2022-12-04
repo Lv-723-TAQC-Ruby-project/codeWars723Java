@@ -29,7 +29,13 @@ public class FiveTest extends FiveDataProvider {
     @Test(dataProvider = "dataSolveSum")
     public void solveSumTest(Five impl, double m, double expected) {
         double actual = impl.solveSum(m);
-        Assert.assertEquals(actual, expected);
+        double merr = 1e-12;
+        boolean inrange = Math.abs(actual - expected) <= merr;
+        if (inrange == false)
+        {
+            System.out.println("Expected must be near " + expected +", got " + actual);
+        }
+        Assert.assertEquals(true, inrange);
     }
 
     @Test(dataProvider = "dataBigIntegerPerimeter")
