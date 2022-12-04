@@ -129,14 +129,14 @@ public class TaskRunner {
         System.out.println("The result of converting -> " + result);
     }
     public void runSquareOrSquareRoot() {
-        // To do
-    }
-    public void runCountPositivesSumNegatives() {
         System.out.println("Run task to square root or no to square");
         System.out.println("Please, input number to check:  ");
         int[] i = reader.readIntArr();
         int[] result = user.getEight().squareOrSquareRoot(i);
         System.out.println("The result of operation  is: " + Arrays.toString(result));
+    }
+    public void runCountPositivesSumNegatives() {
+        // To do
     }
     public void runStringToNumber() {
         System.out.println("Run task convert a string to a number");
@@ -210,6 +210,8 @@ public class TaskRunner {
         System.out.println("The result of converting => " + result);
         System.out.println("------------------------------------");
     }
+
+
     public void runMean() {
         System.out.println("Run task Rainfall: mean (return average for city)");
         System.out.println("Please, enter city to check: ");
