@@ -89,10 +89,7 @@ public class SixImpl extends BaseKata implements Six {
 
     @Override
     public double f(double x) {
-        MathContext mc = new MathContext(30);
-        BigDecimal one = new BigDecimal(1);
-        BigDecimal result = (one.add(BigDecimal.valueOf(x))).sqrt(mc).subtract(one);
-        return result.doubleValue();
+        return x / (1 + Math.sqrt(x + 1));
     }
 
     @Override
