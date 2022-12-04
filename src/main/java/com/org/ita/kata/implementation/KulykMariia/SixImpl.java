@@ -15,13 +15,10 @@ public class SixImpl extends BaseKata implements Six {
     public long findNb(long m) {
         long rectanglesCounter = 0;
         long totalVolume = 0;
-        while (totalVolume <= m) {
-            rectanglesCounter++;
-            totalVolume += Math.pow(rectanglesCounter, 3);
+        while (totalVolume < m) {
+            totalVolume += ++rectanglesCounter * rectanglesCounter * rectanglesCounter;
         }
-        if (m == totalVolume) {
-            return rectanglesCounter;
-        } else return -1;
+        return totalVolume == m ? rectanglesCounter : -1;
     }
 
     @Override
