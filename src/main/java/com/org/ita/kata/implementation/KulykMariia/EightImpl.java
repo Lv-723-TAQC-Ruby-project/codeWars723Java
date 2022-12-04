@@ -7,8 +7,11 @@ import java.util.Arrays;
 public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
-        double result = time * 0.5;
-        return (int) result;
+        int result;
+        if (time >= 0) {
+            result = (int) (time * 0.5);
+        } else result = 0;
+        return result;
     }
 
     @Override
@@ -20,7 +23,8 @@ public class EightImpl extends BaseKata implements Eight {
     @Override
     public float mpgToKPM(float mpg) {
         double formula = mpg * (1.609344 / 4.54609188);
-        return (float) formula;
+        return (float) (Math.round(formula * 100) / 100.0);
+
     }
 
     @Override
