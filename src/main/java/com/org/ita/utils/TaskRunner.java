@@ -136,7 +136,11 @@ public class TaskRunner {
         System.out.println("The result of operation  is: " + Arrays.toString(result));
     }
     public void runCountPositivesSumNegatives() {
-        // To do
+        System.out.println("Run task Count of positive sum of negative");
+        System.out.println("Please, input array of numbers to deal with: ");
+        int[] numbers = reader.readIntArr();
+        int[] result = user.getEight().countPositivesSumNegatives(numbers);
+        System.out.println("Result -> " + result);
     }
     public void runStringToNumber() {
         System.out.println("Run task convert a string to a number");
@@ -171,7 +175,13 @@ public class TaskRunner {
         System.out.println("Result: " + Arrays.toString(result));
     }
     public void runNewAvg() {
-        // To do
+        System.out.println("Run task Looking for a benefactor");
+        System.out.println("Please, input array of numbers: \n Example: [14, 30, 5, 7, 9, 11, 16]");
+        double[] array = reader.readDoubleArr();
+        System.out.println("Please, input new average: ");
+        int input = reader.readInteger();
+        long result = user.getSeven().newAvg(array, input);
+        System.out.println("Sum of next foundation should be: " + result);
     }
     public void runSeriesSum() {
         System.out.println("Run task Sum of the first nth term of Series");
@@ -199,7 +209,12 @@ public class TaskRunner {
         System.out.println("The  Building a pile of Cubes is: " + result);
     }
     public void runBalance() {
-        // To do
+        System.out.println("Run Balance task");
+        System.out.println("Please, input String to format: ");
+        System.out.println("Example: \"1000.00!=\\n125 Market !=:125.45\\n126 Hardware =34.95\\n127 Video! 7.45\\n128 Book :14.32\\n129 Gasoline ::16.10\";\n");
+        String data = reader.readString();
+        String result = user.getSix().balance(data);
+        System.out.println("Result of formatting is: " + result);
     }
     public void runF() {
         System.out.println("Run task Floating-point approximation");
@@ -264,7 +279,11 @@ public class TaskRunner {
 
     }
     public void runArtificialRain() {
-        // To do
+        System.out.println("Run Artificial Rain");
+        System.out.println("Please input int array to deal with");
+        int[] array = reader.readIntArr();
+        int result = user.getFive().artificialRain(array);
+        System.out.println("Result of operation is -> " + result);
     }
     public void runGap() {
         System.out.println("Run task Gap in Primes");
@@ -275,7 +294,7 @@ public class TaskRunner {
         System.out.println("Please, input the end of the search: ");
         long n = reader.readLong();
         long [] result = user.getFive().gap(g, m, n);
-        System.out.println("The first pair of two prime numbers is: " + result);
+        System.out.println("The first pair of two prime numbers is: " + Arrays.toString(result));
     }
     public void runZeros() {
         System.out.println("Run task am Number of trailing zeros of N!");
@@ -286,13 +305,15 @@ public class TaskRunner {
     }
     public void runPerimeter() {
         System.out.println("Run task perimeter of squares in a rectangle");
-        System.out.println("Please, input number to check : ");
+        System.out.println("Please, input number to check: ");
         BigInteger n = reader.readBigInteger();
         BigInteger result = user.getFive().perimeter(n);
         System.out.println("The perimeter of squares in a rectangle is -> " + result);
     }
     public void runSolveSum() {
-        // To do
+        System.out.println("Run Which x for that sum? task");
+        System.out.println("Please, enter number: ");
+
     }
     public void runSmallest() {
         System.out.println("Run task find the smallest");
