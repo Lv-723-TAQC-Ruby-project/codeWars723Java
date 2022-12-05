@@ -3,6 +3,8 @@ package com.org.ita.kata.implementation.KovalyovVladyslav;
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Eight;
 
+import java.util.Locale;
+
 public class EightImpl extends BaseKata implements Eight{
     @Override
     public int liters(double time) {
@@ -55,7 +57,7 @@ public class EightImpl extends BaseKata implements Eight{
 
     @Override
     public double twoDecimalPlaces(double number) {
-        return Double.parseDouble(String.format("%.2f", number));
+        return Double.parseDouble(String.format(Locale.US,"%.2f", number));
     }
 
     @Override

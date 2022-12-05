@@ -70,7 +70,7 @@ public class EightImpl extends BaseKata implements Eight {
 
     @Override
     public double twoDecimalPlaces(double number) {
-        return Double.parseDouble(String.format("%.2f", number));
+        return Double.parseDouble(String.format(Locale.US,"%.2f", number));
     }
 
     @Override
