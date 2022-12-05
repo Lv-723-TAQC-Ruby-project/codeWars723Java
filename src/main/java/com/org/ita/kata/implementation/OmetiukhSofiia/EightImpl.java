@@ -41,10 +41,7 @@ public class EightImpl extends BaseKata implements Eight {
 
     @Override
     public int[] countPositivesSumNegatives(int[] input) {
-        if (input == null || input.length == 0) {
-            int[] emptyArray = {};
-            return emptyArray;
-        }
+
         int pos = 0;
         int neg = 0;
         for (int i = 0; i < input.length; i++) {

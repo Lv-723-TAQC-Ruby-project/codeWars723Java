@@ -19,9 +19,7 @@ public class FiveImpl extends BaseKata implements Five {
         int[] right = new int[length];
         int result = 0;
 
-        if (length == 0) {
-            return 0;
-        } else if (length == 1) {
+       if (length == 1) {
             return 1;
         }
 

@@ -45,9 +45,7 @@ public class FiveImpl extends BaseKata implements Five {
     }
 
     public static boolean isPrime(long n) {
-        if (n == 2) {
-            return true;
-        }
+    
         if (n <= 1 || n % 2 == 0) {
             return false;
         }

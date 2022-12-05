@@ -12,17 +12,13 @@ public class FiveImpl extends BaseKata implements Five {
         for(int i = 1; i < v.length; i++){
             if(v[i] < v[i - 1]) left = i;
             else if(v[i] > v[i-1]){
-                if(area > record)
-                    area = area;
-                else
+
                     area = record;
                 record = i - left;
             }
             record++;
         }
-        if(area>record)
-            return area;
-        else
+
             return record;
     }
 
