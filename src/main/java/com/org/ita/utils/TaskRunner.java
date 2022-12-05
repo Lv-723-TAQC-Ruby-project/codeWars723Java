@@ -1,5 +1,7 @@
 package com.org.ita.utils;
 
+import org.w3c.dom.ls.LSOutput;
+
 import java.math.BigInteger;
 import java.util.Arrays;
 
@@ -219,8 +221,10 @@ public class TaskRunner {
                 "129 Gasoline 16.10\"");
         String data = reader.readString();
         String result = user.getSix().balance(data);
+        System.out.println("  ");
         System.out.println("Result of formatting is: ");
         System.out.println(result);
+        System.out.println("  ");
     }
     public void runF() {
         System.out.println("Run task Floating-point approximation");
