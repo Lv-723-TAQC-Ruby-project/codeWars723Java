@@ -3,6 +3,8 @@ package com.org.ita.kata.implementation.LypskyiOleksandr;
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Seven;
 
+import java.util.Locale;
+
 public class SevenImpl extends BaseKata implements Seven {
     @Override
     public long newAvg(double[] arr, double navg) {
@@ -27,7 +29,7 @@ public class SevenImpl extends BaseKata implements Seven {
             value += 1 / number;
             number += 3;
         }
-        return String.format("%.2f", value);
+        return String.format(Locale.US,"%.2f", value);
     }
 
     @Override

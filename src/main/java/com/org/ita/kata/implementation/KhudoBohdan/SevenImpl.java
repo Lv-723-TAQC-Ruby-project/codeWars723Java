@@ -4,6 +4,7 @@ import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Seven;
 
 import java.util.Arrays;
+import java.util.Locale;
 
 public class SevenImpl extends BaseKata implements Seven {
     @Override
@@ -25,7 +26,7 @@ public class SevenImpl extends BaseKata implements Seven {
             x += 3;
         }
 
-        return String.format("%.2f", sum);
+        return String.format(Locale.US,"%.2f", sum);
     }
 
     @Override

@@ -3,6 +3,8 @@ package com.org.ita.kata.implementation.KmytiukNatalyia;
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Seven;
 
+import java.util.Locale;
+
 public class SevenImpl extends BaseKata implements Seven {
     @Override
     public long newAvg(double[] arr, double navg) {
@@ -22,7 +24,7 @@ public class SevenImpl extends BaseKata implements Seven {
         double sum = 0.0;
         for (int i = 0; i < n; i++)
             sum += 1.0 / (1 + 3 * i);
-        return String.format("%.2f", sum);
+        return String.format(Locale.US,"%.2f", sum);
     }
 
     @Override
