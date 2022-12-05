@@ -140,7 +140,7 @@ public class TaskRunner {
         System.out.println("Please, input array of numbers to deal with: ");
         int[] numbers = reader.readIntArr();
         int[] result = user.getEight().countPositivesSumNegatives(numbers);
-        System.out.println("Result -> " + result);
+        System.out.println("Result -> " + Arrays.toString(result));
     }
     public void runStringToNumber() {
         System.out.println("Run task convert a string to a number");
@@ -312,7 +312,10 @@ public class TaskRunner {
     }
     public void runSolveSum() {
         System.out.println("Run Which x for that sum? task");
-        System.out.println("Please, enter number: ");
+        System.out.println("Please, enter double number: ");
+        double num = reader.readDouble();
+        double result = user.getFive().solveSum(num);
+        System.out.println("Result of operation is -> " + result);
 
     }
     public void runSmallest() {
