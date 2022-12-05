@@ -29,7 +29,7 @@ public class SixImpl extends BaseKata implements Six {
             sum += Double.parseDouble(lines[i].split("\\s+")[2]);
             report
                     .append(lines[i].trim().replaceAll("\\s+", " "))
-                    .append(String.format(" Balance %.2f", balance - sum))
+                    .append(String.format(Locale.US, " Balance %.2f", balance - sum))
                     .append(book);
         }
         return report + String.format(Locale.US, "Total expense  %.2f%sAverage expense  %.2f", sum, book, sum / (lines.length - 1));
