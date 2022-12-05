@@ -15,7 +15,16 @@ public class FiveImpl extends BaseKata implements Five {
 
     @Override
     public int artificialRain(int[] v) {
-        return 0;
+        int left = 0, area = 0, record = 1;
+        for(int i = 1; i < v.length; i++){
+            if(v[i] < v[i - 1]) left = i;
+            else if(v[i] > v[i-1]){
+                area = Math.max(area, record);
+                record = i - left;
+            }
+            record++;
+        }
+        return Math.max(area, record);
     }
 
     @Override
