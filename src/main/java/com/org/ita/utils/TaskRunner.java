@@ -212,14 +212,10 @@ public class TaskRunner {
     }
     public void runBalance() {
         System.out.println("Run Balance task");
+        String data ="1000.00!=\n125 Market !=:125.45\n126 Hardware =34.95\n127 Video! 7.45\n128 Book :14.32\n129 Gasoline ::16.10";
         System.out.println("Please, input String to format: ");
-        System.out.println("Example: \"1000.00\n" +
-                "125 Market 125.45\n" +
-                "126 Hardware 34.95\n" +
-                "127 Video 7.45\n" +
-                "128 Book 14.32\n" +
-                "129 Gasoline 16.10\"");
-        String data = reader.readString();
+        System.out.println(data);
+        reader.readString();
         String result = user.getSix().balance(data);
         System.out.println("  ");
         System.out.println("Result of formatting is: ");
