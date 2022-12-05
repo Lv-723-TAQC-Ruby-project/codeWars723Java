@@ -2,6 +2,8 @@ package com.org.ita.kata.implementation.StanislavKovalov;
 
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
+
+import java.util.Locale;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -23,9 +25,9 @@ public class SixImpl extends BaseKata implements Six {
         double sum = 0;
         for (int i = 1; i < lines.length; i++) {
             sum += Double.parseDouble(lines[i].split("\\s+")[2]);
-            report.append(lines[i].trim().replaceAll("\\s+", " ")).append(String.format(" Balance %.2f", balance - sum)).append(newLine);
+            report.append(lines[i].trim().replaceAll("\\s+", " ")).append(String.format(Locale.US," Balance %.2f", balance - sum)).append(newLine);
         }
-        return report + String.format("Total expense  %.2f%sAverage expense  %.2f", sum, newLine, sum / (lines.length - 1));
+        return report + String.format(Locale.US,"Total expense  %.2f%sAverage expense  %.2f", sum, newLine, sum / (lines.length - 1));
     }
 
     @Override

@@ -5,6 +5,7 @@ import com.org.ita.kata.Six;
 
 import java.util.Arrays;
 import java.util.List;
+import java.util.Locale;
 import java.util.stream.Collectors;
 
 public class SixImpl extends BaseKata implements Six {
@@ -36,10 +37,10 @@ public class SixImpl extends BaseKata implements Six {
             String[] line = arr[i].split(" +");
             current -= Double.parseDouble(line[2]);
             total += Double.parseDouble(line[2]);
-            String u = String.format("\\r\\n%s %s %s Balance %.2f", line[0], line[1], line[2], current);
+            String u = String.format(Locale.US,"\\r\\n%s %s %s Balance %.2f", line[0], line[1], line[2], current);
             result.append(u);
         }
-        result.append(String.format("\\r\\nTotal expense  %.2f\\r\\nAverage expense  %.2f", total, total / count));
+        result.append(String.format(Locale.US,"\\r\\nTotal expense  %.2f\\r\\nAverage expense  %.2f", total, total / count));
         return result.toString();
     }
 

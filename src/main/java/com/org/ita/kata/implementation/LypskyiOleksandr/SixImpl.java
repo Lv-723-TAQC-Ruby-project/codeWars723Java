@@ -2,10 +2,8 @@ package com.org.ita.kata.implementation.LypskyiOleksandr;
 
 import com.org.ita.kata.BaseKata;
 import com.org.ita.kata.Six;
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.HashMap;
-import java.util.List;
+
+import java.util.*;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 import java.util.stream.Collectors;
@@ -61,7 +59,7 @@ public class SixImpl extends BaseKata implements Six {
         Matcher matcher = decimalNumPattern.matcher(arrayOfStrings[0]);
         matcher.find();
         double balance = Double.parseDouble(matcher.group(0));
-        String stringToReturn = "Original Balance: " + String.format("%.2f", balance);
+        String stringToReturn = "Original Balance: " + String.format(Locale.US,"%.2f", balance);
         double totalExpense = 0;
         double totalItems = 0;
         for (int i = 1; i < arrayOfStrings.length; i++) {
@@ -78,9 +76,9 @@ public class SixImpl extends BaseKata implements Six {
             totalExpense += priceOfItem;
             totalItems += 1;
             balance -= priceOfItem;
-            stringToReturn += "\\r\\n" + tempArray[0] + nameOfItem + " " + String.format("%.2f", priceOfItem) + " Balance " + String.format("%.2f", balance);
+            stringToReturn += "\\r\\n" + tempArray[0] + nameOfItem + " " + String.format(Locale.US,"%.2f", priceOfItem) + " Balance " + String.format(Locale.US,"%.2f", balance);
         }
-        stringToReturn += "\\r\\nTotal expense  " + String.format("%.2f", totalExpense) + "\\r\\nAverage expense  " + String.format("%.2f", (totalExpense / totalItems));
+        stringToReturn += "\\r\\nTotal expense  " + String.format(Locale.US,"%.2f", totalExpense) + "\\r\\nAverage expense  " + String.format(Locale.US,"%.2f", (totalExpense / totalItems));
         return stringToReturn;
     }
 
