@@ -79,7 +79,7 @@ public class ConsoleReader {
         try {
             return reader.readLine();
         } catch (IOException e) {
-            System.out.println("Input should be long");
+            System.out.println("Input should be String");
             return readString();
         }
     }
@@ -88,7 +88,7 @@ public class ConsoleReader {
         try {
             return reader.readLine().trim().split("\\s+");
         } catch (IOException e) {
-            System.out.println("Input should be long");
+            System.out.println("Input should be String array");
             return readStringArr();
         }
     }
@@ -103,7 +103,7 @@ public class ConsoleReader {
             }
             return arr;
         } catch (IOException e) {
-            System.out.println("Input should be long");
+            System.out.println("Input should be int array");
             return readIntArr();
         }
     }
@@ -118,7 +118,7 @@ public class ConsoleReader {
             }
             return arr;
         } catch (IOException e) {
-            System.out.println("Input should be long");
+            System.out.println("Input should be double array");
             return readDoubleArr();
         }
     }

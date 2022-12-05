@@ -215,7 +215,8 @@ public class TaskRunner {
         System.out.println(data);
         reader.readString();
         String result = user.getSix().balance(data);
-        System.out.println("Result of formatting is: " + result);
+        System.out.println("Result of formatting is: ");
+        System.out.println(result);
     }
     public void runF() {
         System.out.println("Run task Floating-point approximation");
