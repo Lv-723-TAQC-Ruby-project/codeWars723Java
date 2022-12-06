@@ -83,7 +83,7 @@ public class SixImpl extends BaseKata implements Six {
             }
         }
         if (index == -1) {
-            return index;
+
         }
 
         return  avrg.get(index);
@@ -120,7 +120,7 @@ public class SixImpl extends BaseKata implements Six {
             }
         }
         if (index == -1) {
-            return index;
+
         }
 
         return  variance_arr.get(index);
@@ -129,7 +129,7 @@ public class SixImpl extends BaseKata implements Six {
     @Override
     public String nbaCup(String resultSheet, String toFind) {
         if (toFind.isEmpty()) {
-            return toFind;
+
         }
 
         if (!resultSheet.matches(String.format("(.*)%s\\s(.*)", toFind))) {

@@ -39,11 +39,11 @@ public class SixImpl extends BaseKata implements Six {
         String num = null;
         int town_s =strng.indexOf(town);
         if (town_s == -1.0) {
-            return new double [0];
+
         }
         int town_e = strng.indexOf("\n",town_s);
         if (town_e == -1){
-            num = strng.substring(town_s);
+
         } else {
             num = strng.substring(town_s,town_e);
         }
@@ -61,7 +61,7 @@ public class SixImpl extends BaseKata implements Six {
     public double mean(String town, String strng) {
         double [] array = arr(town,strng);
         if (array.length == 0){
-            return -1;
+
         }
         double sum = 0.0;
         for (double x : array){
@@ -74,7 +74,7 @@ public class SixImpl extends BaseKata implements Six {
     public double variance(String town, String strng) {
         double [] array = arr(town,strng);
         if (array.length == 0){
-            return -1;
+
         }
         double mean = mean(town, strng);
         double sum = 0;
@@ -104,13 +104,13 @@ public class SixImpl extends BaseKata implements Six {
     @Override
     public String nbaCup(String resultSheet, String toFind) {
         if (toFind.isEmpty()) {
-            return "";
+
         }
 
         var stats = new int[5];
         for (var match : of(resultSheet.split(",")).filter(s -> s.contains(toFind)).toArray(String[]::new)) {
             if (match.contains(".")) {
-                return "Error(float number):" + match;
+
             }
             var teams = match.substring(0, match.lastIndexOf(' ')).replaceAll(" \\d+ ", "@").split("@");
             if (teams[0].equals(toFind) || teams[1].equals(toFind)) {
@@ -134,11 +134,7 @@ public class SixImpl extends BaseKata implements Six {
 
         if (pointsA > pointsB) {
             stats[0]++;
-        } else if (pointsA < pointsB) {
-            stats[1]++;
-        } else {
-            stats[2]++;
-        }
+        } 
     }
 
     @Override

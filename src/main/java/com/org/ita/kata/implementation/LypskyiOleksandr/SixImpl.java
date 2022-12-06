@@ -35,7 +35,7 @@ public class SixImpl extends BaseKata implements Six {
 
         }
         if (townData.size() == 0) {
-            townData.addAll(Arrays.asList(-1.0, -1.0));
+
         }
         return townData;
     }
@@ -63,8 +63,7 @@ public class SixImpl extends BaseKata implements Six {
         double totalExpense = 0;
         double totalItems = 0;
         for (int i = 1; i < arrayOfStrings.length; i++) {
-            if (arrayOfStrings[i].isEmpty())
-                continue;
+
             String preparedString = arrayOfStrings[i].replaceAll("\\s+", "");
             Matcher matcherName = wordPattern.matcher(preparedString);
             matcherName.find();

@@ -98,9 +98,7 @@ public class FiveImpl extends BaseKata implements Five {
                 }
             }
         }
-        if (mem[0] == -1) {
-            mem[0] = n;  mem[1] = 0; mem[2] = 0;
-        }
+
         return mem;
     }
 }
