@@ -1,14 +1,12 @@
 package com.org.ita.utils;
 
-import org.w3c.dom.ls.LSOutput;
-
 import java.math.BigInteger;
 import java.util.Arrays;
 
 public class TaskRunner {
     private Users user = Users.BRYL_ANDRII;
     private final ConsoleReader reader = new ConsoleReader();
-    static final String data = "Rome:Jan 81.2,Feb 63.2,Mar 70.3,Apr 55.7,May 53.0,Jun 36.4,Jul 17.5,Aug 27.5,Sep 60.9,Oct 117.7,Nov 111.0,Dec 97.9\n"
+    static final String dataForRainfallTask = "Rome:Jan 81.2,Feb 63.2,Mar 70.3,Apr 55.7,May 53.0,Jun 36.4,Jul 17.5,Aug 27.5,Sep 60.9,Oct 117.7,Nov 111.0,Dec 97.9\n"
             + "London:Jan 48.0,Feb 38.9,Mar 39.9,Apr 42.2,May 47.3,Jun 52.1,Jul 59.5,Aug 57.2,Sep 55.4,Oct 62.0,Nov 59.0,Dec 52.9\n"
             + "Paris:Jan 182.3,Feb 120.6,Mar 158.1,Apr 204.9,May 323.1,Jun 300.5,Jul 236.8,Aug 192.9,Sep 66.3,Oct 63.3,Nov 83.2,Dec 154.7\n"
             + "NY:Jan 108.7,Feb 101.8,Mar 131.9,Apr 93.5,May 98.8,Jun 93.6,Jul 102.2,Aug 131.8,Sep 92.0,Oct 82.3,Nov 107.8,Dec 94.2\n"
@@ -235,7 +233,7 @@ public class TaskRunner {
         System.out.println("Run task Rainfall: mean (return average for city)");
         System.out.println("Please, enter city to check: ");
         String city = reader.readString();
-        double result = user.getSix().mean(city, data);
+        double result = user.getSix().mean(city, dataForRainfallTask);
         System.out.println("Average for " + city + " is " + result);
     }
     public void runVariance() {
@@ -243,7 +241,7 @@ public class TaskRunner {
         System.out.println("Please, enter city to check: ");
         String city = reader.readString();
         System.out.println("Please enter data to deal with: ");
-        double result = user.getSix().variance(city, data);
+        double result = user.getSix().variance(city, dataForRainfallTask);
         System.out.println("Result is: " + result);
     }
     public void runNbaCup() {

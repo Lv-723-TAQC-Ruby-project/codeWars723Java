@@ -38,7 +38,7 @@ public class ConsoleReader {
             if (min <= value && value <= max) {
                 return value;
             }
-            System.out.println("Enter a value between " + min + " " + max);
+            System.out.println("Enter a value between " + min + "-" + max);
             return readIntegerMinMax(min, max);
 
         } catch (IOException | NumberFormatException e) {
