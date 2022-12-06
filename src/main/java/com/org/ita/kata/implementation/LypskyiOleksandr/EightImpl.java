@@ -12,7 +12,11 @@ import java.util.Locale;
 public class EightImpl extends BaseKata implements Eight {
     @Override
     public int liters(double time) {
-        return (int) (time * 0.5);
+        if (time > 0) {
+            return (int) (time * 0.5);
+        } else {
+            return 0;
+        }
     }
 
     @Override
